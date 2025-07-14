@@ -7,13 +7,13 @@ const HeroSection = () => {
         {/* Left Content */}
         <div className="space-y-8">
           <div className="space-y-6">
-            <h1 className="hero-text">
+            <h1 className="hero-text-compact">
               Crafting intuitive experiences that bridge the gap between 
               <span className="italic font-light"> human needs</span> and 
               <span className="font-medium"> digital possibilities</span>
             </h1>
             
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl">
+            <p className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-2xl">
               I'm a UX Designer passionate about creating meaningful digital experiences 
               that solve real problems. With a focus on user-centered design and innovative 
               solutions, I help transform complex challenges into simple, elegant interfaces 
@@ -21,25 +21,22 @@ const HeroSection = () => {
             </p>
           </div>
           
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex justify-start">
             <Button className="cursive-button">
-              View My Work
-            </Button>
-            <Button variant="outline" className="rounded-full px-8 py-3">
-              Get in Touch
+              Write me an email
             </Button>
           </div>
         </div>
         
         {/* Right Content - GIF/Image */}
         <div className="relative">
-          <div className="gif-container">
+          <div className="gif-container-compact">
             <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-muted to-muted/50">
               <div className="text-center space-y-4">
-                <div className="w-24 h-24 mx-auto bg-primary/10 rounded-full flex items-center justify-center">
-                  <span className="text-4xl">👋</span>
+                <div className="w-16 h-16 mx-auto bg-primary/10 rounded-full flex items-center justify-center">
+                  <span className="text-2xl">👋</span>
                 </div>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-xs text-muted-foreground">
                   GIF of me waving and smiling
                 </p>
               </div>
@@ -47,8 +44,8 @@ const HeroSection = () => {
           </div>
           
           {/* Decorative Elements */}
-          <div className="absolute -top-4 -right-4 w-8 h-8 bg-primary/20 rounded-full"></div>
-          <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-primary/10 rounded-full"></div>
+          <div className="absolute -top-2 -right-2 w-4 h-4 bg-primary/20 rounded-full"></div>
+          <div className="absolute -bottom-2 -left-2 w-3 h-3 bg-primary/10 rounded-full"></div>
         </div>
       </div>
     </section>

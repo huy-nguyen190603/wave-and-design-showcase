@@ -65,23 +65,17 @@ const WorkSection = () => {
                         />
                       </div>
                       
-                      {/* Quick Actions */}
-                      <div className="flex gap-3">
-                        <Button className="cursive-button text-sm" size="sm">
-                          View Case Study
-                        </Button>
-                        {project.link !== "#" && (
-                          <Button variant="outline" size="sm" className="rounded-full">
-                            <ExternalLink className="w-3 h-3 mr-2" />
-                            Live Site
-                          </Button>
-                        )}
+                      {/* Embedded Pitch Deck */}
+                      <div className="bg-black rounded-lg p-4 text-white">
+                        <p className="text-sm text-center">
+                          [Embedded Pitch Deck - {project.title}]
+                        </p>
                       </div>
                     </div>
                   </div>
                   
                   {/* Project Info - 1/3 */}
-                  <div className="bg-muted/30 p-8 space-y-6">
+                  <div className="bg-muted/30 p-8 space-y-6 h-full flex flex-col">
                     <div className="space-y-4">
                       <div>
                         <p className="text-sm font-medium text-muted-foreground">Type of Project</p>
@@ -99,7 +93,7 @@ const WorkSection = () => {
                       </div>
                     </div>
                     
-                    <div>
+                    <div className="flex-1">
                       <p className="text-sm font-medium text-muted-foreground mb-3">Description</p>
                       <p className="text-sm leading-relaxed">{project.description}</p>
                     </div>
@@ -109,17 +103,56 @@ const WorkSection = () => {
                       <div className="space-y-2">
                         {project.skills.map((skill, index) => (
                           <div key={index} className="flex items-center gap-2">
-                            <div className="w-2 h-2 bg-primary rounded-full"></div>
+                            <input type="checkbox" checked readOnly className="w-3 h-3" />
                             <span className="text-sm">{skill}</span>
                           </div>
                         ))}
                       </div>
+                    </div>
+                    
+                    {/* CTA Button */}
+                    <div className="pt-4">
+                      <Button className="cursive-button text-sm w-full">
+                        {project.id === 1 ? "Open IMPADY.com" : "Open Prototype in Figma"}
+                      </Button>
                     </div>
                   </div>
                 </div>
               </CardContent>
             </Card>
           ))}
+          
+          {/* Featured Links Section */}
+          <div className="mt-16 max-w-4xl mx-auto">
+            <div className="flex items-center gap-2 mb-6">
+              <span className="text-sm text-primary">✨</span>
+              <span className="text-sm font-medium">Featured In:</span>
+            </div>
+            
+            <div className="space-y-4">
+              <div className="border rounded-lg p-4 hover:bg-muted/20 transition-colors">
+                <h3 className="font-medium mb-2">Europäische Uni als Fernziel</h3>
+                <p className="text-sm text-muted-foreground mb-2">
+                  Die Hochschule Darmstadt ist im Verbund mit acht ausländischen Hochschulen. Sie wollen eine vereinte...
+                </p>
+                <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                  <span>📍</span>
+                  <span>https://www.fr.de/rhein-main/darmstadt/europa...</span>
+                </div>
+              </div>
+              
+              <div className="border rounded-lg p-4 hover:bg-muted/20 transition-colors">
+                <h3 className="font-medium mb-2">Incubation Program – Impact das Wissenscha...</h3>
+                <p className="text-sm text-muted-foreground mb-2">
+                  Shared vision, combined forces, concentrated innovations: More than 100 participants experienced...
+                </p>
+                <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                  <span>🔗</span>
+                  <span>https://impact.h-da.de/en/incubation-program</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

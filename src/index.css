@@ -106,12 +106,17 @@
   }
 
   body {
-    @apply bg-background text-foreground font-satoshi;
+    @apply bg-background text-foreground;
+    font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
   }
   
   /* Custom Portfolio Styles */
   .hero-text {
     @apply text-4xl md:text-6xl lg:text-7xl font-light leading-tight tracking-tight;
+  }
+  
+  .hero-text-compact {
+    @apply text-2xl md:text-3xl lg:text-4xl font-light leading-tight tracking-tight;
   }
   
   .section-heading {
@@ -128,6 +133,10 @@
   
   .gif-container {
     @apply relative overflow-hidden rounded-2xl aspect-video bg-muted;
+  }
+  
+  .gif-container-compact {
+    @apply relative overflow-hidden rounded-xl aspect-square w-32 h-32 bg-muted;
   }
   
   .testimonial-card {
