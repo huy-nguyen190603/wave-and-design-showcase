@@ -34,7 +34,7 @@ const WorkSection = () => {
     <section className="py-20 px-6">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="section-heading mb-6">Work</h2>
+          <h2 className="text-2xl md:text-3xl font-medium tracking-tight mb-6">Work</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             A showcase of projects where design meets real-world impact
           </p>
@@ -65,31 +65,25 @@ const WorkSection = () => {
                         />
                       </div>
                       
-                      {/* Embedded Pitch Deck */}
-                      <div className="bg-black rounded-lg p-4 text-white">
-                        <p className="text-sm text-center">
-                          [Embedded Pitch Deck - {project.title}]
-                        </p>
-                      </div>
                     </div>
                   </div>
                   
                   {/* Project Info - 1/3 */}
                   <div className="bg-muted/30 p-8 space-y-6 h-full flex flex-col">
-                    <div className="space-y-4">
-                      <div>
-                        <p className="text-sm font-medium text-muted-foreground">Type of Project</p>
-                        <p className="font-medium">{project.type}</p>
+                    <div className="space-y-2">
+                      <div className="flex gap-2">
+                        <span className="text-sm font-bold text-muted-foreground">Type of Project:</span>
+                        <span className="text-sm">{project.type}</span>
                       </div>
                       
-                      <div>
-                        <p className="text-sm font-medium text-muted-foreground">Time</p>
-                        <p className="font-medium">{project.duration}</p>
+                      <div className="flex gap-2">
+                        <span className="text-sm font-bold text-muted-foreground">Time:</span>
+                        <span className="text-sm">{project.duration}</span>
                       </div>
                       
-                      <div>
-                        <p className="text-sm font-medium text-muted-foreground">Role</p>
-                        <p className="font-medium">{project.role}</p>
+                      <div className="flex gap-2">
+                        <span className="text-sm font-bold text-muted-foreground">Role:</span>
+                        <span className="text-sm">{project.role}</span>
                       </div>
                     </div>
                     
@@ -103,7 +97,7 @@ const WorkSection = () => {
                       <div className="space-y-2">
                         {project.skills.map((skill, index) => (
                           <div key={index} className="flex items-center gap-2">
-                            <input type="checkbox" checked readOnly className="w-3 h-3" />
+                            <input type="checkbox" readOnly className="w-3 h-3" />
                             <span className="text-sm">{skill}</span>
                           </div>
                         ))}
@@ -115,6 +109,40 @@ const WorkSection = () => {
                       <Button className="cursive-button text-sm w-full">
                         {project.id === 1 ? "Open IMPADY.com" : "Open Prototype in Figma"}
                       </Button>
+                      
+                      {/* Featured Links for SNAPCARE only */}
+                      {project.id === 2 && (
+                        <div className="mt-6">
+                          <div className="flex items-center gap-2 mb-3">
+                            <span className="text-sm text-primary">✨</span>
+                            <span className="text-sm font-medium">Featured In:</span>
+                          </div>
+                          
+                          <div className="space-y-3">
+                            <div className="border rounded-lg p-3 hover:bg-muted/20 transition-colors">
+                              <h4 className="text-sm font-medium mb-1">Europäische Uni als Fernziel</h4>
+                              <p className="text-xs text-muted-foreground mb-1">
+                                Die Hochschule Darmstadt ist im Verbund mit acht ausländischen Hochschulen. Sie wollen eine vereinte...
+                              </p>
+                              <div className="flex items-center gap-1 text-xs text-muted-foreground">
+                                <span>📍</span>
+                                <span>https://www.fr.de/rhein-main/darmstadt/europa...</span>
+                              </div>
+                            </div>
+                            
+                            <div className="border rounded-lg p-3 hover:bg-muted/20 transition-colors">
+                              <h4 className="text-sm font-medium mb-1">Incubation Program – Impact das Wissenscha...</h4>
+                              <p className="text-xs text-muted-foreground mb-1">
+                                Shared vision, combined forces, concentrated innovations: More than 100 participants experienced...
+                              </p>
+                              <div className="flex items-center gap-1 text-xs text-muted-foreground">
+                                <span>🔗</span>
+                                <span>https://impact.h-da.de/en/incubation-program</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -122,37 +150,6 @@ const WorkSection = () => {
             </Card>
           ))}
           
-          {/* Featured Links Section */}
-          <div className="mt-16 max-w-4xl mx-auto">
-            <div className="flex items-center gap-2 mb-6">
-              <span className="text-sm text-primary">✨</span>
-              <span className="text-sm font-medium">Featured In:</span>
-            </div>
-            
-            <div className="space-y-4">
-              <div className="border rounded-lg p-4 hover:bg-muted/20 transition-colors">
-                <h3 className="font-medium mb-2">Europäische Uni als Fernziel</h3>
-                <p className="text-sm text-muted-foreground mb-2">
-                  Die Hochschule Darmstadt ist im Verbund mit acht ausländischen Hochschulen. Sie wollen eine vereinte...
-                </p>
-                <div className="flex items-center gap-2 text-xs text-muted-foreground">
-                  <span>📍</span>
-                  <span>https://www.fr.de/rhein-main/darmstadt/europa...</span>
-                </div>
-              </div>
-              
-              <div className="border rounded-lg p-4 hover:bg-muted/20 transition-colors">
-                <h3 className="font-medium mb-2">Incubation Program – Impact das Wissenscha...</h3>
-                <p className="text-sm text-muted-foreground mb-2">
-                  Shared vision, combined forces, concentrated innovations: More than 100 participants experienced...
-                </p>
-                <div className="flex items-center gap-2 text-xs text-muted-foreground">
-                  <span>🔗</span>
-                  <span>https://impact.h-da.de/en/incubation-program</span>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>

@@ -44,7 +44,7 @@ const BeyondWorkSection = () => {
       <section className="py-20 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="section-heading mb-6">Beyond Work</h2>
+            <h2 className="text-2xl md:text-3xl font-medium tracking-tight mb-6">Beyond Work</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Personal projects and creative explorations that fuel my design passion
             </p>
@@ -54,13 +54,16 @@ const BeyondWorkSection = () => {
             {beyondProjects.map((project) => (
               <Card key={project.id} className="project-card group cursor-pointer" onClick={() => openProject(project.id)}>
                 <CardContent className="p-0">
-                  {/* GIF Preview */}
-                  <div className="gif-container relative overflow-hidden">
-                    <img 
-                      src={project.gifPreview} 
-                      alt={`${project.title} preview`}
-                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                    />
+                   {/* GIF Preview */}
+                  <div className="gif-container relative overflow-hidden bg-muted/50">
+                    <div className="w-full h-full bg-muted flex items-center justify-center">
+                      <div className="text-center space-y-2">
+                        <div className="w-12 h-12 mx-auto bg-primary/10 rounded-full flex items-center justify-center">
+                          <Play className="w-6 h-6" />
+                        </div>
+                        <p className="text-xs text-muted-foreground">GIF Preview</p>
+                      </div>
+                    </div>
                     
                     {/* Play Overlay */}
                     <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">

@@ -7,7 +7,7 @@ const HeroSection = () => {
         {/* Left Content */}
         <div className="space-y-8">
           <div className="space-y-6">
-            <h1 className="hero-text-compact">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight leading-tight">
               Crafting intuitive experiences that bridge the gap between 
               <span className="italic font-light"> human needs</span> and 
               <span className="font-medium"> digital possibilities</span>
@@ -30,16 +30,14 @@ const HeroSection = () => {
         
         {/* Right Content - GIF/Image */}
         <div className="relative">
-          <div className="gif-container-compact">
-            <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-muted to-muted/50">
-              <div className="text-center space-y-4">
-                <div className="w-16 h-16 mx-auto bg-primary/10 rounded-full flex items-center justify-center">
-                  <span className="text-2xl">👋</span>
-                </div>
-                <p className="text-xs text-muted-foreground">
-                  GIF of me waving and smiling
-                </p>
+          <div className="w-full bg-gradient-to-br from-muted to-muted/50 rounded-xl flex items-center justify-center" style={{height: "calc(100% - 2rem)"}}>
+            <div className="text-center space-y-4">
+              <div className="w-16 h-16 mx-auto bg-primary/10 rounded-full flex items-center justify-center">
+                <span className="text-2xl">👋</span>
               </div>
+              <p className="text-xs text-muted-foreground">
+                GIF of me waving and smiling
+              </p>
             </div>
           </div>
           
