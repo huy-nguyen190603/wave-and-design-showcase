@@ -49,11 +49,13 @@ const WorkSection = () => {
                   <div className="lg:col-span-2 p-8">
                     <div className="space-y-6">
                       {/* Project Header */}
-                      <div className="flex items-center gap-3 mb-4">
-                        <div className="w-8 h-8 bg-gradient-to-br from-primary/20 to-primary/10 rounded-lg flex items-center justify-center">
-                          <FileText className="w-4 h-4" />
-                        </div>
-                        <span className="text-sm font-medium text-muted-foreground">{project.title}</span>
+                      <div className="flex items-center gap-4 mb-4">
+                        <img 
+                          src={project.id === 1 ? "/lovable-uploads/c2fae0fe-edf1-4926-9d19-dfae57c51058.png" : "/lovable-uploads/8cb4848f-0c98-4459-b0f7-7d8a31f53de8.png"} 
+                          alt={`${project.title} logo`}
+                          className="w-12 h-12 object-contain"
+                        />
+                        <h3 className="text-3xl font-bold">{project.title}</h3>
                       </div>
                       
                       {/* Cover Image */}
