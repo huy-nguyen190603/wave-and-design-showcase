@@ -7,13 +7,13 @@ const HeroSection = () => {
         {/* Left Content */}
         <div className="space-y-8">
           <div className="space-y-6">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight leading-tight">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-medium tracking-tight leading-tight">
               Crafting intuitive experiences that bridge the gap between 
               <span className="italic font-light"> human needs</span> and 
               <span className="font-medium"> digital possibilities</span>
             </h1>
             
-            <p className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-2xl">
+            <p className="text-sm md:text-base text-muted-foreground leading-relaxed max-w-2xl">
               I'm a UX Designer passionate about creating meaningful digital experiences 
               that solve real problems. With a focus on user-centered design and innovative 
               solutions, I help transform complex challenges into simple, elegant interfaces 
