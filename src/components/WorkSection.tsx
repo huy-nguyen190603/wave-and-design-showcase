@@ -76,39 +76,7 @@ const WorkSection = () => {
                   </div>
                   
                    {/* Project Info - 1/3 */}
-                  <div className="bg-muted/30 p-8 space-y-6 h-full flex flex-col">
-                    {project.id === 2 && (
-                      <div className="bg-background/80 rounded-lg p-4 border">
-                        <div className="flex items-center gap-2 mb-3">
-                          <span className="text-sm text-primary">✨</span>
-                          <span className="text-sm font-medium">Featured In:</span>
-                        </div>
-                        
-                        <div className="space-y-3">
-                          <div className="border rounded-lg p-3 hover:bg-muted/20 transition-colors">
-                            <h4 className="text-sm font-medium mb-1">Europäische Uni als Fernziel</h4>
-                            <p className="text-xs text-muted-foreground mb-1">
-                              Die Hochschule Darmstadt ist im Verbund mit acht ausländischen Hochschulen...
-                            </p>
-                            <div className="flex items-center gap-1 text-xs text-muted-foreground">
-                              <span>📍</span>
-                              <span>fr.de/rhein-main/darmstadt</span>
-                            </div>
-                          </div>
-                          
-                          <div className="border rounded-lg p-3 hover:bg-muted/20 transition-colors">
-                            <h4 className="text-sm font-medium mb-1">Impact Incubation Program</h4>
-                            <p className="text-xs text-muted-foreground mb-1">
-                              100+ participants experienced shared innovation...
-                            </p>
-                            <div className="flex items-center gap-1 text-xs text-muted-foreground">
-                              <span>🔗</span>
-                              <span>impact.h-da.de/incubation</span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    )}
+                   <div className="bg-muted/30 p-8 space-y-6 h-full flex flex-col">
                     <div className="space-y-2">
                       <div className="flex gap-2">
                         <span className="text-sm font-bold text-muted-foreground">Type of Project:</span>
@@ -143,13 +111,38 @@ const WorkSection = () => {
                       </div>
                     </div>
                     
-                    {/* CTA Button */}
-                    <div className="pt-4">
-                      <Button className="cursive-button text-sm w-full">
-                        {project.id === 1 ? "Open IMPADY.com" : "Open Prototype in Figma"}
-                      </Button>
-                      
-                    </div>
+                     {/* CTA Button */}
+                     <div className="pt-4">
+                       <Button className="cursive-button text-sm w-full">
+                         {project.id === 1 ? "Open IMPADY.com" : "Open Prototype in Figma"}
+                       </Button>
+                     </div>
+                     
+                     {/* Featured In - Only for SNAPCARE, positioned below CTA */}
+                     {project.id === 2 && (
+                       <div className="mt-3">
+                         <div className="flex items-center gap-1 mb-2">
+                           <span className="text-xs text-primary">✨</span>
+                           <span className="text-xs font-medium">Featured In:</span>
+                         </div>
+                         
+                         <div className="border rounded-lg overflow-hidden">
+                           <div className="flex gap-3 p-3 hover:bg-muted/20 transition-colors">
+                             <img 
+                               src="/lovable-uploads/979b96d0-162d-4ca8-a3f8-09c56658df2c.png" 
+                               alt="Article preview"
+                               className="w-16 h-12 object-cover rounded flex-shrink-0"
+                             />
+                             <div className="min-w-0 flex-1">
+                               <h4 className="text-xs font-medium mb-1 leading-tight">Europäische Uni als Fernziel</h4>
+                               <p className="text-xs text-muted-foreground leading-tight">
+                                 Die Hochschule Darmstadt ist im Verbund...
+                               </p>
+                             </div>
+                           </div>
+                         </div>
+                       </div>
+                     )}
                   </div>
                 </div>
               </CardContent>
