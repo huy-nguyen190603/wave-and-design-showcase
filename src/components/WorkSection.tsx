@@ -55,19 +55,55 @@ const WorkSection = () => {
                     <h3 className="text-xl md:text-2xl font-bold">{project.title}</h3>
                   </div>
                   
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    {/* Pitch Deck Preview - 16:9 Ratio */}
-                    <div className="relative overflow-hidden rounded-xl bg-muted" style={{aspectRatio: '16/9'}}>
-                      <div className="w-full h-full flex items-center justify-center">
-                        <div className="text-center space-y-4">
-                          <div className="w-12 h-12 mx-auto bg-primary/10 rounded-full flex items-center justify-center">
-                            <FileText className="w-6 h-6 text-primary/60" />
+                  <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    {/* Pitch Deck Preview - 16:9 Ratio - Takes 2/3 */}
+                    <div className="lg:col-span-2 space-y-4">
+                      <div className="relative overflow-hidden rounded-xl bg-muted" style={{aspectRatio: '16/9'}}>
+                        <div className="w-full h-full flex items-center justify-center">
+                          <div className="text-center space-y-4">
+                            <div className="w-12 h-12 mx-auto bg-primary/10 rounded-full flex items-center justify-center">
+                              <FileText className="w-6 h-6 text-primary/60" />
+                            </div>
+                            <p className="text-sm text-muted-foreground">
+                              {project.title} Pitch Deck Preview
+                            </p>
                           </div>
-                          <p className="text-sm text-muted-foreground">
-                            {project.title} Pitch Deck Preview
-                          </p>
                         </div>
                       </div>
+                      
+                      {/* Featured In - Only for SNAPCARE */}
+                      {project.id === 2 && (
+                        <div>
+                          <div className="flex items-center gap-1 mb-3">
+                            <span className="text-xs text-primary">✨</span>
+                            <span className="text-xs font-medium">Featured In:</span>
+                          </div>
+                          
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                            <div className="border rounded-lg p-3 hover:bg-muted/20 transition-colors">
+                              <h4 className="text-xs font-medium mb-1">Europäische Uni als Fernziel</h4>
+                              <p className="text-xs text-muted-foreground mb-2">
+                                Die Hochschule Darmstadt ist im Verbund mit acht ausländischen Hochschulen...
+                              </p>
+                              <div className="flex items-center gap-1 text-xs text-muted-foreground">
+                                <span>📍</span>
+                                <span>fr.de/rhein-main/darmstadt</span>
+                              </div>
+                            </div>
+                            
+                            <div className="border rounded-lg p-3 hover:bg-muted/20 transition-colors">
+                              <h4 className="text-xs font-medium mb-1">Incubation Program – Impact das Wissenschaft...</h4>
+                              <p className="text-xs text-muted-foreground mb-2">
+                                Shared vision, combined forces, concentrated innovations: More than 100 participants experienced an...
+                              </p>
+                              <div className="flex items-center gap-1 text-xs text-muted-foreground">
+                                <span>🔗</span>
+                                <span>impact.h-da.de/en/incubation-program</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      )}
                     </div>
                     
                     {/* Project Info */}
@@ -132,40 +168,6 @@ const WorkSection = () => {
                           )}
                         </Button>
                       </div>
-                      
-                      {/* Featured In - Only for SNAPCARE */}
-                      {project.id === 2 && (
-                        <div className="mt-4">
-                          <div className="flex items-center gap-1 mb-3">
-                            <span className="text-xs text-primary">✨</span>
-                            <span className="text-xs font-medium">Featured In:</span>
-                          </div>
-                          
-                          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                            <div className="border rounded-lg p-3 hover:bg-muted/20 transition-colors">
-                              <h4 className="text-xs font-medium mb-1">Europäische Uni als Fernziel</h4>
-                              <p className="text-xs text-muted-foreground mb-2">
-                                Die Hochschule Darmstadt ist im Verbund mit acht ausländischen Hochschulen...
-                              </p>
-                              <div className="flex items-center gap-1 text-xs text-muted-foreground">
-                                <span>📍</span>
-                                <span>fr.de/rhein-main/darmstadt</span>
-                              </div>
-                            </div>
-                            
-                            <div className="border rounded-lg p-3 hover:bg-muted/20 transition-colors">
-                              <h4 className="text-xs font-medium mb-1">Incubation Program – Impact das Wissenschaft...</h4>
-                              <p className="text-xs text-muted-foreground mb-2">
-                                Shared vision, combined forces, concentrated innovations: More than 100 participants experienced an...
-                              </p>
-                              <div className="flex items-center gap-1 text-xs text-muted-foreground">
-                                <span>🔗</span>
-                                <span>impact.h-da.de/en/incubation-program</span>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      )}
                     </div>
                   </div>
                 </div>
