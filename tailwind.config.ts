@@ -19,6 +19,7 @@ export default {
 		},
 		extend: {
 			fontFamily: {
+				sans: ['Satoshi', 'system-ui', 'sans-serif'],
 				satoshi: ['Satoshi', 'system-ui', 'sans-serif'],
 			},
 			colors: {

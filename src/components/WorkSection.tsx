@@ -1,8 +1,18 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, FileText } from "lucide-react";
+import { ExternalLink, FileText, ChevronLeft, ChevronRight } from "lucide-react";
+import confetti from 'canvas-confetti';
 
 const WorkSection = () => {
+  const handleSkillClick = () => {
+    confetti({
+      particleCount: 50,
+      spread: 60,
+      origin: { y: 0.8 },
+      colors: ['#10b981', '#3b82f6', '#8b5cf6', '#f59e0b']
+    });
+  };
+
   const projects = [
     {
       id: 1,
@@ -14,7 +24,8 @@ const WorkSection = () => {
       description: "Helping B2B companies communicate product value clearly to drive more effective sales. IMPADY focuses on enabling teams to show ROI and value creation to their clients.",
       skills: ["User Research & Interviewing", "Qualitative Data Analysis", "Workshop Planning & Facilitation", "Sketching to High-Fidelity Design (Figma)"],
       coverImage: "/lovable-uploads/506ad88a-d966-4e29-b377-16c16405ae05.png",
-      link: "https://impady.com"
+      link: "https://impady.com",
+      canvaLink: "https://www.canva.com/design/DAGq092O1Ts/DXIcfzYoRuEsrWa6W1Nthw/edit?utm_content=DAGq092O1Ts&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
     },
     {
       id: 2,
@@ -26,48 +37,77 @@ const WorkSection = () => {
       description: "A mobile solution for booking doctor appointments without phone calls — designed to reduce language and scheduling barriers in healthcare access.",
       skills: ["User Research & Interviewing", "Data Analysis", "Sketching to High-Fidelity Design (Figma)", "Usability Testing"],
       coverImage: "/lovable-uploads/a6888a24-b0ad-4dd1-84c4-0121ebf7593b.png",
-      link: "#"
+      link: "#",
+      canvaLink: "https://www.canva.com/design/DAGm1_9HqFo/ZygNDfO1hx8-siJN3PmgKA/edit?utm_content=DAGm1_9HqFo&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
+    },
+    {
+      id: 3,
+      title: "Psychological Refractory Period",
+      subtitle: "Cognitive Research Study",
+      type: "Empirical Research Project",
+      duration: "~4 months",
+      role: "Member in a team of 3",
+      description: "A lab-based cognitive study exploring the Psychological Refractory Period — how people process two tasks in rapid succession using ANOVA and correlation.",
+      skills: ["Research Design & Hypothesis Testing", "Experimental Setup (E-Prime)", "Quantitative Analysis (SPSS)", "Data Visualization"],
+      coverImage: "/lovable-uploads/979b96d0-162d-4ca8-a3f8-09c56658df2c.png",
+      link: "#",
+      canvaLink: "https://www.canva.com/design/DAGths7jopE/BmKMiqVTFU8B63FBnuTlxg/edit?utm_content=DAGths7jopE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
     }
   ];
 
   return (
-    <section className="py-20 px-6">
+    <section className="py-20 px-6 border-t border-border/10">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-2xl md:text-3xl font-medium tracking-tight mb-6">Work</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            A showcase of projects where design meets real-world impact
-          </p>
         </div>
         
-        <div className="space-y-16">
-          {projects.map((project) => (
-            <Card key={project.id} className="project-card border-0 shadow-lg">
-              <CardContent className="p-0">
-                <div className="p-8">
-                  {/* Project Header */}
-                  <div className="flex items-center gap-4 mb-6">
-                    <img 
-                      src={project.id === 1 ? "/lovable-uploads/c2fae0fe-edf1-4926-9d19-dfae57c51058.png" : "/lovable-uploads/8cb4848f-0c98-4459-b0f7-7d8a31f53de8.png"} 
-                      alt={`${project.title} logo`}
-                      className="w-12 h-12 object-contain"
-                    />
-                    <h3 className="text-xl md:text-2xl font-bold">{project.title}</h3>
-                  </div>
+        <div className="space-y-24">
+          {projects.map((project, index) => (
+            <div key={project.id} className={`${index > 0 ? 'border-t border-border/10 pt-16' : ''}`}>
+              <Card className="project-card border-0 bg-background/50">
+                <CardContent className="p-0">
+                  <div className="p-8">
+                    {/* Project Header */}
+                    <div className="flex items-center gap-4 mb-6">
+                      <img 
+                        src={
+                          project.id === 1 ? "/lovable-uploads/c2fae0fe-edf1-4926-9d19-dfae57c51058.png" : 
+                          project.id === 2 ? "/lovable-uploads/8cb4848f-0c98-4459-b0f7-7d8a31f53de8.png" :
+                          "/lovable-uploads/0e7b5832-eb71-4c95-bacc-422dadc89565.png"
+                        } 
+                        alt={`${project.title} logo`}
+                        className="w-12 h-12 object-contain"
+                      />
+                      <h3 className="text-xl md:text-2xl font-bold">{project.title}</h3>
+                    </div>
                   
                   <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                     {/* Pitch Deck Preview - 16:9 Ratio - Takes 2/3 */}
                     <div className="lg:col-span-2 space-y-4">
-                      <div className="relative overflow-hidden rounded-xl bg-muted" style={{aspectRatio: '16/9'}}>
-                        <div className="w-full h-full flex items-center justify-center">
-                          <div className="text-center space-y-4">
-                            <div className="w-12 h-12 mx-auto bg-primary/10 rounded-full flex items-center justify-center">
-                              <FileText className="w-6 h-6 text-primary/60" />
+                      <div className="relative overflow-hidden rounded-xl bg-muted border group cursor-pointer" style={{aspectRatio: '16/9'}}>
+                        <a href={project.canvaLink} target="_blank" rel="noopener noreferrer" className="block w-full h-full">
+                          <div className="w-full h-full flex items-center justify-center">
+                            <div className="text-center space-y-4">
+                              <div className="w-12 h-12 mx-auto bg-primary/10 rounded-full flex items-center justify-center">
+                                <FileText className="w-6 h-6 text-primary/60" />
+                              </div>
+                              <p className="text-sm text-muted-foreground">
+                                {project.title} Pitch Deck Preview
+                              </p>
                             </div>
-                            <p className="text-sm text-muted-foreground">
-                              {project.title} Pitch Deck Preview
-                            </p>
                           </div>
+                        </a>
+                        {/* Navigation buttons */}
+                        <div className="absolute inset-y-0 left-0 w-1/2 opacity-0 group-hover:opacity-100 transition-opacity">
+                          <a href={project.canvaLink} target="_blank" rel="noopener noreferrer" className="flex items-center justify-start pl-4 h-full">
+                            <ChevronLeft className="w-8 h-8 text-white bg-black/50 rounded-full p-1" />
+                          </a>
+                        </div>
+                        <div className="absolute inset-y-0 right-0 w-1/2 opacity-0 group-hover:opacity-100 transition-opacity">
+                          <a href={project.canvaLink} target="_blank" rel="noopener noreferrer" className="flex items-center justify-end pr-4 h-full">
+                            <ChevronRight className="w-8 h-8 text-white bg-black/50 rounded-full p-1" />
+                          </a>
                         </div>
                       </div>
                       
@@ -80,7 +120,18 @@ const WorkSection = () => {
                           </div>
                           
                           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                            <div className="border rounded-lg p-3 hover:bg-muted/20 transition-colors">
+                            <a href="https://impact.h-da.de/en/incubation-program" target="_blank" rel="noopener noreferrer" className="border rounded-lg p-3 hover:bg-muted/20 transition-colors">
+                              <h4 className="text-xs font-medium mb-1">European fireworks of ideas</h4>
+                              <p className="text-xs text-muted-foreground mb-2">
+                                Shared vision, combined forces, concentrated innovations: More than 100 participants experienced an...
+                              </p>
+                              <div className="flex items-center gap-1 text-xs text-muted-foreground">
+                                <span>🔗</span>
+                                <span>impact.h-da.de/en/incubation-program</span>
+                              </div>
+                            </a>
+                            
+                            <a href="https://www.fr.de/rhein-main/darmstadt/europaeische-uni-als-fernziel-der-hochschule-darmstadt-93773945.html#google_vignette" target="_blank" rel="noopener noreferrer" className="border rounded-lg p-3 hover:bg-muted/20 transition-colors">
                               <h4 className="text-xs font-medium mb-1">Europäische Uni als Fernziel</h4>
                               <p className="text-xs text-muted-foreground mb-2">
                                 Die Hochschule Darmstadt ist im Verbund mit acht ausländischen Hochschulen...
@@ -89,18 +140,7 @@ const WorkSection = () => {
                                 <span>📍</span>
                                 <span>fr.de/rhein-main/darmstadt</span>
                               </div>
-                            </div>
-                            
-                            <div className="border rounded-lg p-3 hover:bg-muted/20 transition-colors">
-                              <h4 className="text-xs font-medium mb-1">Incubation Program – Impact das Wissenschaft...</h4>
-                              <p className="text-xs text-muted-foreground mb-2">
-                                Shared vision, combined forces, concentrated innovations: More than 100 participants experienced an...
-                              </p>
-                              <div className="flex items-center gap-1 text-xs text-muted-foreground">
-                                <span>🔗</span>
-                                <span>impact.h-da.de/en/incubation-program</span>
-                              </div>
-                            </div>
+                            </a>
                           </div>
                         </div>
                       )}
@@ -126,17 +166,17 @@ const WorkSection = () => {
                       </div>
                       
                       <div>
-                        <p className="text-sm font-medium text-muted-foreground mb-3">Description</p>
+                        <p className="text-sm font-bold text-muted-foreground mb-3">Description</p>
                         <p className="text-sm leading-relaxed">{project.description}</p>
                       </div>
                       
                       <div>
-                        <p className="text-sm font-medium text-muted-foreground mb-3">Skills</p>
+                        <p className="text-sm font-bold text-muted-foreground mb-3">Skills</p>
                         <div className="space-y-2">
                           {project.skills.map((skill, index) => (
-                            <div key={index} className="flex items-center gap-2">
-                              <input type="checkbox" readOnly className="w-3 h-3" />
-                              <span className="text-sm">{skill}</span>
+                            <div key={index} className="flex items-center gap-2 cursor-pointer hover:bg-muted/20 rounded p-1 transition-colors" onClick={handleSkillClick}>
+                              <input type="checkbox" readOnly className="w-3 h-3 pointer-events-none" />
+                              <span className="text-sm select-none">{skill}</span>
                             </div>
                           ))}
                         </div>
@@ -144,7 +184,7 @@ const WorkSection = () => {
                       
                       {/* CTA Button */}
                       <div className="pt-4">
-                        <Button className="cursive-button text-sm w-full flex items-center gap-2">
+                        <Button className="text-sm w-full flex items-center gap-2 hover:opacity-20 transition-opacity">
                           {project.id === 1 ? (
                             <>
                               <img 
@@ -154,7 +194,7 @@ const WorkSection = () => {
                               />
                               Open IMPADY.com
                             </>
-                          ) : (
+                          ) : project.id === 2 ? (
                             <>
                               <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M15.852 8.981h-4.588V0h4.588c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.491-4.49 4.491zM12.735 7.51h3.117c1.665 0 3.019-1.355 3.019-3.02s-1.354-3.02-3.019-3.02h-3.117v6.04z"/>
@@ -165,6 +205,11 @@ const WorkSection = () => {
                               </svg>
                               Open Prototype in Figma
                             </>
+                          ) : (
+                            <>
+                              <FileText className="w-4 h-4" />
+                              Open Research Paper (in German)
+                            </>
                           )}
                         </Button>
                       </div>
@@ -173,8 +218,8 @@ const WorkSection = () => {
                 </div>
               </CardContent>
             </Card>
+            </div>
           ))}
-          
         </div>
       </div>
     </section>
