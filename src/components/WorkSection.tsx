@@ -1,23 +1,30 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, FileText, ChevronLeft, ChevronRight } from "lucide-react";
+import { ExternalLink, FileText, ChevronLeft, ChevronRight, Copy } from "lucide-react";
 import confetti from 'canvas-confetti';
 import { useState } from 'react';
+import { useToast } from "@/hooks/use-toast";
 
 const WorkSection = () => {
   const [clickedSkills, setClickedSkills] = useState<Set<string>>(new Set());
+  const { toast } = useToast();
 
   const handleSkillClick = (skill: string, event: React.MouseEvent) => {
-    const rect = (event.target as HTMLElement).getBoundingClientRect();
-    const x = (rect.left + rect.width / 2) / window.innerWidth;
-    const y = (rect.top + rect.height / 2) / window.innerHeight;
+    const isCurrentlyClicked = clickedSkills.has(skill);
     
-    confetti({
-      particleCount: 20,
-      spread: 30,
-      origin: { x, y },
-      colors: ['#10b981', '#3b82f6', '#8b5cf6', '#f59e0b']
-    });
+    // Only show confetti when adding (not removing)
+    if (!isCurrentlyClicked) {
+      const rect = (event.target as HTMLElement).getBoundingClientRect();
+      const x = (rect.left + rect.width / 2) / window.innerWidth;
+      const y = (rect.top + rect.height / 2) / window.innerHeight;
+      
+      confetti({
+        particleCount: 8,
+        spread: 15,
+        origin: { x, y },
+        colors: ['#10b981', '#3b82f6', '#8b5cf6', '#f59e0b']
+      });
+    }
 
     setClickedSkills(prev => {
       const newSet = new Set(prev);
@@ -27,6 +34,13 @@ const WorkSection = () => {
         newSet.add(skill);
       }
       return newSet;
+    });
+  };
+
+  const copyEmail = () => {
+    navigator.clipboard.writeText('baohuy.nguyen@stud.h-da.de');
+    toast({
+      description: "Email address copied to clipboard!",
     });
   };
 
@@ -79,10 +93,10 @@ const WorkSection = () => {
           <h2 className="text-2xl md:text-3xl font-medium tracking-tight mb-6">Work</h2>
         </div>
         
-        <div className="space-y-24">
+        <div className="space-y-32">
           {projects.map((project, index) => (
-            <div key={project.id} className={`${index > 0 ? 'border-t border-border/10 pt-16' : ''}`}>
-              <Card className="project-card border-0 bg-background/50">
+            <div key={project.id} className={`relative ${index > 0 ? 'border-t-2 border-border/20 pt-20' : ''} ${index < projects.length - 1 ? 'after:content-[""] after:absolute after:bottom-0 after:left-1/2 after:transform after:-translate-x-1/2 after:w-16 after:h-0.5 after:bg-gradient-to-r after:from-transparent after:via-border after:to-transparent' : ''}`}>
+              <Card className="project-card border border-border/20 bg-background/80 backdrop-blur-sm rounded-2xl shadow-lg">
                 <CardContent className="p-0">
                   <div className="p-8">
                     {/* Project Header */}
@@ -111,7 +125,7 @@ const WorkSection = () => {
                           />
                         </div>
                       
-                        {/* Featured In - Only for SNAPCARE */}
+                          {/* Featured In - Only for SNAPCARE */}
                         {project.id === 2 && (
                           <div>
                             <div className="flex items-center gap-1 mb-3">
@@ -119,8 +133,8 @@ const WorkSection = () => {
                               <span className="text-xs font-bold">Featured In:</span>
                             </div>
                             
-                            <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-                              <a href="https://impact.h-da.de/en/incubation-program" target="_blank" rel="noopener noreferrer" className="border rounded-lg p-3 hover:opacity-80 transition-opacity">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                              <a href="https://impact.h-da.de/en/incubation-program" target="_blank" rel="noopener noreferrer" className="border rounded-lg p-3 hover:opacity-90 transition-opacity">
                                 <h4 className="text-xs font-medium mb-1">European fireworks of ideas</h4>
                                 <p className="text-xs text-muted-foreground mb-2">
                                   Shared vision, combined forces, concentrated innovations: More than 100 participants experienced an...
@@ -131,7 +145,7 @@ const WorkSection = () => {
                                 </div>
                               </a>
                               
-                              <a href="https://www.fr.de/rhein-main/darmstadt/europaeische-uni-als-fernziel-der-hochschule-darmstadt-93773945.html#google_vignette" target="_blank" rel="noopener noreferrer" className="border rounded-lg p-3 hover:opacity-80 transition-opacity">
+                              <a href="https://www.fr.de/rhein-main/darmstadt/europaeische-uni-als-fernziel-der-hochschule-darmstadt-93773945.html#google_vignette" target="_blank" rel="noopener noreferrer" className="border rounded-lg p-3 hover:opacity-90 transition-opacity">
                                 <h4 className="text-xs font-medium mb-1">Europäische Uni als Fernziel</h4>
                                 <p className="text-xs text-muted-foreground mb-2">
                                   Die Hochschule Darmstadt ist im Verbund mit acht ausländischen Hochschulen...
@@ -141,15 +155,6 @@ const WorkSection = () => {
                                   <span>fr.de/rhein-main/darmstadt</span>
                                 </div>
                               </a>
-
-                              <Button className="text-sm flex items-center gap-2 hover:opacity-80 transition-opacity h-full">
-                                <img 
-                                  src="/lovable-uploads/5116d23a-ff42-4904-8e73-c0631215e58a.png" 
-                                  alt="Figma logo"
-                                  className="w-4 h-4 object-contain"
-                                />
-                                Open Prototype in Figma
-                              </Button>
                             </div>
                           </div>
                         )}
@@ -188,7 +193,7 @@ const WorkSection = () => {
                               return (
                                 <div 
                                   key={index} 
-                                  className={`flex items-center gap-2 cursor-pointer hover:bg-muted/20 rounded p-1 transition-colors ${isClicked ? 'bg-primary/10' : ''}`} 
+                                  className={`flex items-center gap-2 cursor-pointer hover:bg-muted/20 rounded p-1 transition-colors`} 
                                   onClick={(e) => handleSkillClick(skillKey, e)}
                                 >
                                   <input 
@@ -204,10 +209,34 @@ const WorkSection = () => {
                           </div>
                         </div>
                       
-                        {/* CTA Button - Only for non-SNAPCARE projects */}
-                        {project.id !== 2 && (
+                        {/* CTA Buttons */}
+                        {project.id === 2 ? (
                           <div className="pt-4">
-                            <Button className="text-sm w-full flex items-center gap-2 hover:opacity-80 transition-opacity">
+                            <Button 
+                              className="text-sm w-full flex items-center gap-2 hover:opacity-90 transition-opacity"
+                              onClick={() => window.open('https://www.figma.com/proto/e71vytYcbY7rb760X9rvhU/Snapcare--Official-?page-id=0%3A1&node-id=439-5329&p=f&viewport=-1404%2C1316%2C0.26&t=Dt0YvonDz9FqjRZk-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=437%3A4608&show-proto-sidebar=1', '_blank')}
+                            >
+                              <img 
+                                src="/lovable-uploads/5116d23a-ff42-4904-8e73-c0631215e58a.png" 
+                                alt="Figma logo"
+                                className="w-4 h-4 object-contain"
+                              />
+                              Open Prototype in Figma
+                            </Button>
+                          </div>
+                        ) : (
+                          <div className="pt-4">
+                            <Button 
+                              className="text-sm w-full flex items-center gap-2 hover:opacity-90 transition-opacity"
+                              onClick={() => {
+                                if (project.id === 1) {
+                                  window.open('https://impady.com/', '_blank');
+                                } else {
+                                  // Research paper link for project 3
+                                  window.open('#', '_blank');
+                                }
+                              }}
+                            >
                               {project.id === 1 ? (
                                 <>
                                   <img 

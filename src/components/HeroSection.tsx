@@ -1,6 +1,16 @@
 import { Button } from "@/components/ui/button";
+import { useToast } from "@/hooks/use-toast";
 
 const HeroSection = () => {
+  const { toast } = useToast();
+
+  const copyEmail = () => {
+    navigator.clipboard.writeText('baohuy.nguyen@stud.h-da.de');
+    toast({
+      description: "Email address copied to clipboard!",
+    });
+  };
+
   return (
     <section className="min-h-screen flex items-center justify-center px-6 py-12">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -22,7 +32,7 @@ const HeroSection = () => {
           </div>
           
           <div className="flex justify-start">
-            <Button className="cursive-button">
+            <Button className="cursive-button hover:opacity-90 transition-opacity" onClick={copyEmail}>
               Write me an email
             </Button>
           </div>
