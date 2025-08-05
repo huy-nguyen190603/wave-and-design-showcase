@@ -80,13 +80,13 @@ const WorkSection = () => {
     link: "#",
     canvaLink: "https://www.canva.com/design/DAGths7jopE/BmKMiqVTFU8B63FBnuTlxg/edit?utm_content=DAGths7jopE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
   }];
-  return <section className="py-20 px-6 border-t border-border/10">
+  return <section className="py-12 px-6 border-t border-border/10">
       <div className="max-w-7xl mx-auto">
         <div className="mb-16">
           <h2 className="text-3xl md:text-4xl font-medium tracking-tight mb-6 text-left">Selected UX Projects</h2>
         </div>
         
-        <div className="space-y-16">
+        <div className="space-y-8">
           {projects.map((project, index) => <div key={project.id} className="relative">
               <Card className="project-card border border-border/10 bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300">
                 <CardContent className="p-0">

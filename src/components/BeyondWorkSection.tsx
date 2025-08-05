@@ -22,7 +22,7 @@ const BeyondWorkSection = () => {
   };
 
   return (
-    <section className="py-20 px-6">
+    <section className="py-12 px-6">
       <div className="max-w-6xl mx-auto">
         <div className="mb-16">
           <h2 className="text-2xl md:text-3xl font-medium tracking-tight mb-6 text-left">Beyond these projects, I also ...</h2>
@@ -32,9 +32,9 @@ const BeyondWorkSection = () => {
           {beyondProjects.map((project) => (
             <div key={project.id} className="space-y-6">
               {/* Video Element */}
-              <div className="w-full bg-white rounded-2xl overflow-hidden shadow-sm border border-border/10" style={{ aspectRatio: '16/9' }}>
+              <div className="w-full bg-white rounded-2xl overflow-hidden shadow-sm border border-border/10 max-w-md mx-auto" style={{ aspectRatio: '16/9' }}>
                 <iframe
-                  src={`${getEmbedUrl(project.videoUrl)}?autoplay=1&loop=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&playlist=${project.videoUrl.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\n?#]+)/)?.[1]}`}
+                  src={`${getEmbedUrl(project.videoUrl)}?autoplay=1&loop=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&playlist=${project.videoUrl.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\n?#]+)/)?.[1]}&playsinline=1&iv_load_policy=3&fs=0&disablekb=1&start=0&end=0`}
                   className="w-full h-full"
                   title={project.title}
                   allow="autoplay; encrypted-media"

@@ -107,7 +107,7 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
   }
   
   /* Custom Portfolio Styles */
@@ -124,7 +124,7 @@
   }
   
   .project-card {
-    @apply bg-card border border-border rounded-xl p-6 transition-all duration-300 hover:shadow-[var(--shadow-medium)] hover:border-primary/20;
+    @apply bg-card border border-border rounded-xl p-6 transition-all duration-300 hover:shadow-[var(--shadow-medium)] hover:border-border/40;
   }
   
   .cursive-button {
