@@ -19,9 +19,9 @@ const WorkSection = () => {
       const y = (rect.top + rect.height / 2) / window.innerHeight;
       
       confetti({
-        particleCount: 8,
-        spread: 15,
-        origin: { x, y },
+        particleCount: 6,
+        spread: 10,
+        origin: { x: x - 0.02, y },
         colors: ['#10b981', '#3b82f6', '#8b5cf6', '#f59e0b']
       });
     }
@@ -89,8 +89,8 @@ const WorkSection = () => {
   return (
     <section className="py-20 px-6 border-t border-border/10">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-2xl md:text-3xl font-medium tracking-tight mb-6">Work</h2>
+        <div className="mb-16">
+          <h2 className="text-3xl md:text-4xl font-medium tracking-tight mb-6 text-left">Work</h2>
         </div>
         
         <div className="space-y-32">
@@ -202,7 +202,7 @@ const WorkSection = () => {
                                     readOnly 
                                     className="w-3 h-3 pointer-events-none" 
                                   />
-                                  <span className={`text-sm select-none ${isClicked ? 'font-medium text-primary' : ''}`}>{skill}</span>
+                                  <span className="text-sm select-none">{skill}</span>
                                 </div>
                               );
                             })}
@@ -233,7 +233,7 @@ const WorkSection = () => {
                                   window.open('https://impady.com/', '_blank');
                                 } else {
                                   // Research paper link for project 3
-                                  window.open('#', '_blank');
+                                  window.open('https://drive.google.com/file/d/1tgjnc7DH90MWXm68jvu2MOlsdklpf5-Z/view?usp=drive_link', '_blank');
                                 }
                               }}
                             >

@@ -18,16 +18,13 @@ const HeroSection = () => {
         <div className="space-y-8">
           <div className="space-y-6">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-medium tracking-tight leading-tight">
-              Crafting intuitive experiences that bridge the gap between 
-              <span className="italic font-light"> human needs</span> and 
-              <span className="font-medium"> digital possibilities</span>
+              Crafting digital experiences grounded in human behavior
             </h1>
             
             <p className="text-sm md:text-base text-muted-foreground leading-relaxed max-w-2xl">
-              I'm a UX Designer passionate about creating meaningful digital experiences 
-              that solve real problems. With a focus on user-centered design and innovative 
-              solutions, I help transform complex challenges into simple, elegant interfaces 
-              that users love.
+              I'm a UX Designer pursuing a degree in Business Psychology—a blend that helps me understand not just what users do, but <em>why</em>. I enjoy using research, empathy, and design to create intuitive solutions that feel natural to use.
+              <br /><br />
+              Portfolio overload? Don't worry—I've made skimming simple.
             </p>
           </div>
           
