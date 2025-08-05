@@ -4,28 +4,29 @@ import { ExternalLink, FileText, ChevronLeft, ChevronRight, Copy } from "lucide-
 import confetti from 'canvas-confetti';
 import { useState } from 'react';
 import { useToast } from "@/hooks/use-toast";
-
 const WorkSection = () => {
   const [clickedSkills, setClickedSkills] = useState<Set<string>>(new Set());
-  const { toast } = useToast();
-
+  const {
+    toast
+  } = useToast();
   const handleSkillClick = (skill: string, event: React.MouseEvent) => {
     const isCurrentlyClicked = clickedSkills.has(skill);
-    
+
     // Only show confetti when adding (not removing)
     if (!isCurrentlyClicked) {
       const rect = (event.target as HTMLElement).getBoundingClientRect();
       const x = (rect.left + rect.width / 2) / window.innerWidth;
       const y = (rect.top + rect.height / 2) / window.innerHeight;
-      
       confetti({
         particleCount: 6,
         spread: 10,
-        origin: { x: x - 0.02, y },
+        origin: {
+          x: x - 0.02,
+          y
+        },
         colors: ['#10b981', '#3b82f6', '#8b5cf6', '#f59e0b']
       });
     }
-
     setClickedSkills(prev => {
       const newSet = new Set(prev);
       if (newSet.has(skill)) {
@@ -36,98 +37,77 @@ const WorkSection = () => {
       return newSet;
     });
   };
-
   const copyEmail = () => {
     navigator.clipboard.writeText('baohuy.nguyen@stud.h-da.de');
     toast({
-      description: "Email address copied to clipboard!",
+      description: "Email address copied to clipboard!"
     });
   };
-
-  const projects = [
-    {
-      id: 1,
-      title: "IMPADY",
-      subtitle: "My Journey as a Zero-to-One Designer",
-      type: "B2B Product Design (Startup)",
-      duration: "Since Feb 2024 (1.5+ years)",
-      role: "Product Designer",
-      description: "Helping B2B companies communicate product value clearly to drive more effective sales. IMPADY focuses on enabling teams to show ROI and value creation to their clients.",
-      skills: ["User Research & Interviewing", "Qualitative Data Analysis", "Workshop Planning & Facilitation", "Sketching to High-Fidelity Design (Figma)"],
-      coverImage: "/lovable-uploads/506ad88a-d966-4e29-b377-16c16405ae05.png",
-      link: "https://impady.com",
-      canvaLink: "https://www.canva.com/design/DAGq092O1Ts/DXIcfzYoRuEsrWa6W1Nthw/edit?utm_content=DAGq092O1Ts&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
-    },
-    {
-      id: 2,
-      title: "SNAPCARE",
-      subtitle: "The Creation Story",
-      type: "Independent UX Case Study",
-      duration: "~6 months",
-      role: "Solo Designer",
-      description: "A mobile solution for booking doctor appointments without phone calls — designed to reduce language and scheduling barriers in healthcare access.",
-      skills: ["User Research & Interviewing", "Data Analysis", "Sketching to High-Fidelity Design (Figma)", "Usability Testing"],
-      coverImage: "/lovable-uploads/a6888a24-b0ad-4dd1-84c4-0121ebf7593b.png",
-      link: "#",
-      canvaLink: "https://www.canva.com/design/DAGm1_9HqFo/ZygNDfO1hx8-siJN3PmgKA/edit?utm_content=DAGm1_9HqFo&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
-    },
-    {
-      id: 3,
-      title: "Psychological Refractory Period",
-      subtitle: "Cognitive Research Study",
-      type: "Empirical Research Project",
-      duration: "~4 months",
-      role: "Member in a team of 3",
-      description: "A lab-based cognitive study exploring the Psychological Refractory Period — how people process two tasks in rapid succession using ANOVA and correlation.",
-      skills: ["Research Design & Hypothesis Testing", "Experimental Setup (E-Prime)", "Quantitative Analysis (SPSS)", "Data Visualization"],
-      coverImage: "/lovable-uploads/979b96d0-162d-4ca8-a3f8-09c56658df2c.png",
-      link: "#",
-      canvaLink: "https://www.canva.com/design/DAGths7jopE/BmKMiqVTFU8B63FBnuTlxg/edit?utm_content=DAGths7jopE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
-    }
-  ];
-
-  return (
-    <section className="py-20 px-6 border-t border-border/10">
+  const projects = [{
+    id: 1,
+    title: "IMPADY",
+    subtitle: "My Journey as a Zero-to-One Designer",
+    type: "B2B Product Design (Startup)",
+    duration: "Since Feb 2024 (1.5+ years)",
+    role: "Product Designer",
+    description: "Helping B2B companies communicate product value clearly to drive more effective sales. IMPADY focuses on enabling teams to show ROI and value creation to their clients.",
+    skills: ["User Research & Interviewing", "Qualitative Data Analysis", "Workshop Planning & Facilitation", "Sketching to High-Fidelity Design (Figma)"],
+    coverImage: "/lovable-uploads/506ad88a-d966-4e29-b377-16c16405ae05.png",
+    link: "https://impady.com",
+    canvaLink: "https://www.canva.com/design/DAGq092O1Ts/DXIcfzYoRuEsrWa6W1Nthw/edit?utm_content=DAGq092O1Ts&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
+  }, {
+    id: 2,
+    title: "SNAPCARE",
+    subtitle: "The Creation Story",
+    type: "Independent UX Case Study",
+    duration: "~6 months",
+    role: "Solo Designer",
+    description: "A mobile solution for booking doctor appointments without phone calls — designed to reduce language and scheduling barriers in healthcare access.",
+    skills: ["User Research & Interviewing", "Data Analysis", "Sketching to High-Fidelity Design (Figma)", "Usability Testing"],
+    coverImage: "/lovable-uploads/a6888a24-b0ad-4dd1-84c4-0121ebf7593b.png",
+    link: "#",
+    canvaLink: "https://www.canva.com/design/DAGm1_9HqFo/ZygNDfO1hx8-siJN3PmgKA/edit?utm_content=DAGm1_9HqFo&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
+  }, {
+    id: 3,
+    title: "Psychological Refractory Period",
+    subtitle: "Cognitive Research Study",
+    type: "Empirical Research Project",
+    duration: "~4 months",
+    role: "Member in a team of 3",
+    description: "A lab-based cognitive study exploring the Psychological Refractory Period — how people process two tasks in rapid succession using ANOVA and correlation.",
+    skills: ["Research Design & Hypothesis Testing", "Experimental Setup (E-Prime)", "Quantitative Analysis (SPSS)", "Data Visualization"],
+    coverImage: "/lovable-uploads/979b96d0-162d-4ca8-a3f8-09c56658df2c.png",
+    link: "#",
+    canvaLink: "https://www.canva.com/design/DAGths7jopE/BmKMiqVTFU8B63FBnuTlxg/edit?utm_content=DAGths7jopE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
+  }];
+  return <section className="py-20 px-6 border-t border-border/10">
       <div className="max-w-7xl mx-auto">
         <div className="mb-16">
           <h2 className="text-3xl md:text-4xl font-medium tracking-tight mb-6 text-left">Work</h2>
         </div>
         
         <div className="space-y-32">
-          {projects.map((project, index) => (
-            <div key={project.id} className={`relative ${index > 0 ? 'border-t-2 border-border/20 pt-20' : ''} ${index < projects.length - 1 ? 'after:content-[""] after:absolute after:bottom-0 after:left-1/2 after:transform after:-translate-x-1/2 after:w-16 after:h-0.5 after:bg-gradient-to-r after:from-transparent after:via-border after:to-transparent' : ''}`}>
+          {projects.map((project, index) => <div key={project.id} className={`relative ${index > 0 ? 'border-t-2 border-border/20 pt-20' : ''} ${index < projects.length - 1 ? 'after:content-[""] after:absolute after:bottom-0 after:left-1/2 after:transform after:-translate-x-1/2 after:w-16 after:h-0.5 after:bg-gradient-to-r after:from-transparent after:via-border after:to-transparent' : ''}`}>
               <Card className="project-card border border-border/20 bg-background/80 backdrop-blur-sm rounded-2xl shadow-lg">
                 <CardContent className="p-0">
                   <div className="p-8">
                     {/* Project Header */}
                     <div className="flex items-center gap-4 mb-6">
-                        <img 
-                          src={
-                            project.id === 1 ? "/lovable-uploads/c2fae0fe-edf1-4926-9d19-dfae57c51058.png" : 
-                            project.id === 2 ? "/lovable-uploads/8cb4848f-0c98-4459-b0f7-7d8a31f53de8.png" :
-                            "/lovable-uploads/a9e6f34f-f8d5-499f-9d5c-a9ce4c4624be.png"
-                          } 
-                          alt={`${project.title} logo`}
-                          className="w-12 h-12 object-contain"
-                        />
+                        <img src={project.id === 1 ? "/lovable-uploads/c2fae0fe-edf1-4926-9d19-dfae57c51058.png" : project.id === 2 ? "/lovable-uploads/8cb4848f-0c98-4459-b0f7-7d8a31f53de8.png" : "/lovable-uploads/a9e6f34f-f8d5-499f-9d5c-a9ce4c4624be.png"} alt={`${project.title} logo`} className="w-12 h-12 object-contain" />
                       <h3 className="text-xl md:text-2xl font-bold">{project.title}</h3>
                     </div>
                   
                   <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                       {/* Pitch Deck Preview - 16:9 Ratio - Takes 2/3 */}
                       <div className="lg:col-span-2 space-y-4">
-                        <div className="relative overflow-hidden rounded-xl bg-muted border group" style={{aspectRatio: '16/9'}}>
-                          <iframe
-                            src={project.canvaLink.replace('/edit', '/view').replace('utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton', 'embed')}
-                            className="w-full h-full"
-                            title={`${project.title} Pitch Deck`}
-                            allowFullScreen
-                          />
+                        <div className="relative overflow-hidden rounded-xl bg-muted border group" style={{
+                      aspectRatio: '16/9'
+                    }}>
+                          <iframe src={project.canvaLink.replace('/edit', '/view').replace('utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton', 'embed')} className="w-full h-full" title={`${project.title} Pitch Deck`} allowFullScreen />
                         </div>
                       
                           {/* Featured In - Only for SNAPCARE */}
-                        {project.id === 2 && (
-                          <div>
+                        {project.id === 2 && <div>
                             <div className="flex items-center gap-1 mb-3">
                               <span className="text-xs text-primary">✨</span>
                               <span className="text-xs font-bold">Featured In:</span>
@@ -156,8 +136,7 @@ const WorkSection = () => {
                                 </div>
                               </a>
                             </div>
-                          </div>
-                        )}
+                          </div>}
                     </div>
                     
                     {/* Project Info */}
@@ -188,84 +167,48 @@ const WorkSection = () => {
                           <p className="text-sm font-bold text-muted-foreground mb-3">Skills</p>
                           <div className="space-y-2">
                             {project.skills.map((skill, index) => {
-                              const skillKey = `${project.id}-${skill}`;
-                              const isClicked = clickedSkills.has(skillKey);
-                              return (
-                                <div 
-                                  key={index} 
-                                  className={`flex items-center gap-2 cursor-pointer hover:bg-muted/20 rounded p-1 transition-colors`} 
-                                  onClick={(e) => handleSkillClick(skillKey, e)}
-                                >
-                                  <input 
-                                    type="checkbox" 
-                                    checked={isClicked}
-                                    readOnly 
-                                    className="w-3 h-3 pointer-events-none" 
-                                  />
+                          const skillKey = `${project.id}-${skill}`;
+                          const isClicked = clickedSkills.has(skillKey);
+                          return <div key={index} className={`flex items-center gap-2 cursor-pointer hover:bg-muted/20 rounded p-1 transition-colors`} onClick={e => handleSkillClick(skillKey, e)}>
+                                  <input type="checkbox" checked={isClicked} readOnly className="w-3 h-3 pointer-events-none" />
                                   <span className="text-sm select-none">{skill}</span>
-                                </div>
-                              );
-                            })}
+                                </div>;
+                        })}
                           </div>
                         </div>
                       
                         {/* CTA Buttons */}
-                        {project.id === 2 ? (
-                          <div className="pt-4">
-                            <Button 
-                              className="text-sm w-full flex items-center gap-2 hover:opacity-90 transition-opacity"
-                              onClick={() => window.open('https://www.figma.com/proto/e71vytYcbY7rb760X9rvhU/Snapcare--Official-?page-id=0%3A1&node-id=439-5329&p=f&viewport=-1404%2C1316%2C0.26&t=Dt0YvonDz9FqjRZk-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=437%3A4608&show-proto-sidebar=1', '_blank')}
-                            >
-                              <img 
-                                src="/lovable-uploads/5116d23a-ff42-4904-8e73-c0631215e58a.png" 
-                                alt="Figma logo"
-                                className="w-4 h-4 object-contain"
-                              />
+                        {project.id === 2 ? <div className="pt-4">
+                            <Button onClick={() => window.open('https://www.figma.com/proto/e71vytYcbY7rb760X9rvhU/Snapcare--Official-?page-id=0%3A1&node-id=439-5329&p=f&viewport=-1404%2C1316%2C0.26&t=Dt0YvonDz9FqjRZk-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=437%3A4608&show-proto-sidebar=1', '_blank')} className="text-sm w-full flex items-center gap-2 hover:opacity-90 transition-opacity py-0 my-[12px]">
+                              <img src="/lovable-uploads/5116d23a-ff42-4904-8e73-c0631215e58a.png" alt="Figma logo" className="w-4 h-4 object-contain" />
                               Open Prototype in Figma
                             </Button>
-                          </div>
-                        ) : (
-                          <div className="pt-4">
-                            <Button 
-                              className="text-sm w-full flex items-center gap-2 hover:opacity-90 transition-opacity"
-                              onClick={() => {
-                                if (project.id === 1) {
-                                  window.open('https://impady.com/', '_blank');
-                                } else {
-                                  // Research paper link for project 3
-                                  window.open('https://drive.google.com/file/d/1tgjnc7DH90MWXm68jvu2MOlsdklpf5-Z/view?usp=drive_link', '_blank');
-                                }
-                              }}
-                            >
-                              {project.id === 1 ? (
-                                <>
-                                  <img 
-                                    src="/lovable-uploads/c2fae0fe-edf1-4926-9d19-dfae57c51058.png" 
-                                    alt="IMPADY logo"
-                                    className="w-4 h-4 object-contain"
-                                  />
+                          </div> : <div className="pt-4">
+                            <Button className="text-sm w-full flex items-center gap-2 hover:opacity-90 transition-opacity" onClick={() => {
+                        if (project.id === 1) {
+                          window.open('https://impady.com/', '_blank');
+                        } else {
+                          // Research paper link for project 3
+                          window.open('https://drive.google.com/file/d/1tgjnc7DH90MWXm68jvu2MOlsdklpf5-Z/view?usp=drive_link', '_blank');
+                        }
+                      }}>
+                              {project.id === 1 ? <>
+                                  <img src="/lovable-uploads/c2fae0fe-edf1-4926-9d19-dfae57c51058.png" alt="IMPADY logo" className="w-4 h-4 object-contain" />
                                   Open IMPADY.com
-                                </>
-                              ) : (
-                                <>
+                                </> : <>
                                   <FileText className="w-4 h-4" />
                                   Open Research Paper (in German)
-                                </>
-                              )}
+                                </>}
                             </Button>
-                          </div>
-                        )}
+                          </div>}
                     </div>
                   </div>
                 </div>
               </CardContent>
             </Card>
-            </div>
-          ))}
+            </div>)}
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default WorkSection;
