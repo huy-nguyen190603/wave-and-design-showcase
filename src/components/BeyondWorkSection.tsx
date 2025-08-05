@@ -28,17 +28,17 @@ const BeyondWorkSection = () => {
           <h2 className="text-2xl md:text-3xl font-medium tracking-tight mb-6 text-left">Beyond these projects, I also ...</h2>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 bg-white rounded-2xl p-8 border border-border/10 shadow-sm">
           {beyondProjects.map((project) => (
             <div key={project.id} className="space-y-6">
               {/* Video Element */}
-              <div className="w-full h-64 bg-muted/50 rounded-2xl overflow-hidden shadow-sm border border-border/10">
+              <div className="w-full bg-white rounded-2xl overflow-hidden shadow-sm border border-border/10" style={{ aspectRatio: '16/9' }}>
                 <iframe
-                  src={`${getEmbedUrl(project.videoUrl)}?autoplay=1&loop=1&mute=1&playlist=${project.videoUrl.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\n?#]+)/)?.[1]}`}
+                  src={`${getEmbedUrl(project.videoUrl)}?autoplay=1&loop=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&playlist=${project.videoUrl.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\n?#]+)/)?.[1]}`}
                   className="w-full h-full"
                   title={project.title}
                   allow="autoplay; encrypted-media"
-                  allowFullScreen
+                  style={{ pointerEvents: 'none' }}
                 />
               </div>
               

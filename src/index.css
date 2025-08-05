@@ -2,54 +2,54 @@
 @tailwind components;
 @tailwind utilities;
 
-/* UX Portfolio Design System - Minimalist Black & White with Satoshi Font */
+/* UX Portfolio Design System - Apple-inspired with San Francisco Font */
 
 @layer base {
   :root {
-    /* Core Colors - Minimalist B&W */
-    --background: 0 0% 100%;
-    --foreground: 0 0% 0%;
+    /* Core Colors - Apple Style */
+    --background: 210 20% 96%;
+    --foreground: 240 9% 11%;
     
     /* Card System */
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 0%;
+    --card-foreground: 240 9% 11%;
     
     /* Interactive Elements */
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 0%;
+    --popover-foreground: 240 9% 11%;
     
-    /* Primary - Black */
-    --primary: 0 0% 0%;
+    /* Primary - Apple Dark */
+    --primary: 240 9% 11%;
     --primary-foreground: 0 0% 100%;
     
-    /* Secondary - Light Grey */
-    --secondary: 0 0% 96%;
-    --secondary-foreground: 0 0% 0%;
+    /* Secondary - Apple Light */
+    --secondary: 210 20% 96%;
+    --secondary-foreground: 240 9% 11%;
     
     /* Muted Elements */
-    --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 45%;
+    --muted: 210 20% 96%;
+    --muted-foreground: 240 4% 43%;
     
-    /* Accent - Subtle Grey */
-    --accent: 0 0% 96%;
-    --accent-foreground: 0 0% 0%;
+    /* Accent - Apple Grey */
+    --accent: 210 20% 96%;
+    --accent-foreground: 240 9% 11%;
     
     /* States */
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
     
     /* Borders & Inputs */
-    --border: 0 0% 90%;
-    --input: 0 0% 90%;
-    --ring: 0 0% 0%;
+    --border: 210 20% 88%;
+    --input: 210 20% 88%;
+    --ring: 240 9% 11%;
     
     /* Radius */
     --radius: 0.75rem;
     
     /* Portfolio Specific */
-    --hero-accent: 0 0% 5%;
+    --hero-accent: 240 9% 11%;
     --project-hover: 0 0% 98%;
-    --testimonial-bg: 0 0% 98%;
+    --testimonial-bg: 0 0% 100%;
     
     /* Transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -107,7 +107,7 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
   }
   
   /* Custom Portfolio Styles */

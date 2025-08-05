@@ -86,9 +86,9 @@ const WorkSection = () => {
           <h2 className="text-3xl md:text-4xl font-medium tracking-tight mb-6 text-left">Selected UX Projects</h2>
         </div>
         
-        <div className="space-y-32">
-          {projects.map((project, index) => <div key={project.id} className={`relative ${index > 0 ? 'border-t-2 border-border/20 pt-20' : ''} ${index < projects.length - 1 ? 'after:content-[""] after:absolute after:bottom-0 after:left-1/2 after:transform after:-translate-x-1/2 after:w-16 after:h-0.5 after:bg-gradient-to-r after:from-transparent after:via-border after:to-transparent' : ''}`}>
-              <Card className="project-card border border-border/10 bg-background/60 backdrop-blur-sm rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300">
+        <div className="space-y-16">
+          {projects.map((project, index) => <div key={project.id} className="relative">
+              <Card className="project-card border border-border/10 bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300">
                 <CardContent className="p-0">
                   <div className="p-8">
                     {/* Project Header */}
