@@ -32,11 +32,9 @@ const HeroSection = () => {
         </div>
         
         {/* Right Content - Profile Image */}
-        <div className="relative flex justify-center lg:justify-end">
-          <div className="w-80 h-80 relative">
-            <div className="w-full h-full rounded-full overflow-hidden bg-white shadow-lg">
-              <img src="/lovable-uploads/94be2d95-59df-49ff-9aef-0e7ab1b5887e.png" alt="Bao Huy Nguyen - UX Designer" className="w-full h-full object-contain p-8" />
-            </div>
+        <div className="w-80 h-80 relative flex justify-center lg:justify-end">
+          <div className="w-full h-full rounded-full overflow-hidden bg-white shadow-lg">
+            <img src="/lovable-uploads/94be2d95-59df-49ff-9aef-0e7ab1b5887e.png" alt="Bao Huy Nguyen - UX Designer" className="w-full h-full object-contain p-8" />
           </div>
         </div>
       </div>
