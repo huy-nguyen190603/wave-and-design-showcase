@@ -128,7 +128,7 @@
   }
   
   .cursive-button {
-    @apply inline-flex items-center justify-center rounded-full bg-primary text-primary-foreground px-8 py-3 text-sm font-medium tracking-wide transition-all duration-300 hover:opacity-90 cursor-pointer;
+    @apply inline-flex items-center justify-center rounded-2xl bg-primary text-primary-foreground px-8 py-3 text-sm font-medium tracking-wide transition-all duration-300 hover:opacity-90 cursor-pointer;
   }
   
   .gif-container {
