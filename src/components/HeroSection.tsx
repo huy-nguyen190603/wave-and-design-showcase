@@ -1,21 +1,19 @@
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
-
 const HeroSection = () => {
-  const { toast } = useToast();
-
+  const {
+    toast
+  } = useToast();
   const copyEmail = () => {
     navigator.clipboard.writeText('baohuy.nguyen@stud.h-da.de');
     toast({
-      description: "Email address copied to clipboard!",
+      description: "Email address copied to clipboard!"
     });
   };
-
-  return (
-    <section className="min-h-screen flex items-center justify-center px-6 py-12">
+  return <section className="min-h-screen flex items-center justify-center py-12 px-[40px]">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         {/* Left Content */}
-        <div className="space-y-8">
+        <div className="space-y-8 mx-0 px-0">
           <div className="space-y-6">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight leading-tight">
               Crafting digital experiences grounded in human behavior
@@ -37,17 +35,11 @@ const HeroSection = () => {
         <div className="relative flex justify-center lg:justify-end">
           <div className="w-80 h-80 relative">
             <div className="w-full h-full rounded-full overflow-hidden bg-white shadow-lg">
-              <img 
-                src="/lovable-uploads/94be2d95-59df-49ff-9aef-0e7ab1b5887e.png" 
-                alt="Bao Huy Nguyen - UX Designer" 
-                className="w-full h-full object-contain p-8"
-              />
+              <img src="/lovable-uploads/94be2d95-59df-49ff-9aef-0e7ab1b5887e.png" alt="Bao Huy Nguyen - UX Designer" className="w-full h-full object-contain p-8" />
             </div>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;
