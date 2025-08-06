@@ -31,23 +31,26 @@ const BeyondWorkSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 bg-white rounded-2xl p-8 border border-border/10 shadow-sm">
           {beyondProjects.map((project) => (
             <div key={project.id} className="space-y-6">
-              {/* Video Element */}
-              <div className="w-full bg-white rounded-2xl overflow-hidden shadow-sm border border-border/10 max-w-md mx-auto" style={{ aspectRatio: '16/9' }}>
-                <iframe
-                  src={`${getEmbedUrl(project.videoUrl)}?autoplay=1&loop=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&playlist=${project.videoUrl.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\n?#]+)/)?.[1]}&playsinline=1&iv_load_policy=3&fs=0&disablekb=1&start=0&end=0`}
-                  className="w-full h-full"
-                  title={project.title}
-                  allow="autoplay; encrypted-media"
-                  style={{ pointerEvents: 'none' }}
-                />
-              </div>
-              
               {/* Content */}
-              <div className="space-y-3 text-center">
-                <h3 className="text-xl font-medium">{project.title}</h3>
-                <p className="text-sm leading-relaxed text-muted-foreground">
-                  {project.description}
-                </p>
+              <div className="space-y-3">
+                <h3 className="text-xl font-medium text-center">{project.title}</h3>
+                
+                {/* Video Element */}
+                <div className="w-full bg-white rounded-2xl overflow-hidden shadow-sm border border-border/10 max-w-md mx-auto" style={{ aspectRatio: '16/9' }}>
+                  <iframe
+                    src={`${getEmbedUrl(project.videoUrl)}?autoplay=1&loop=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&playlist=${project.videoUrl.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\n?#]+)/)?.[1]}&playsinline=1&iv_load_policy=3&fs=0&disablekb=1&start=0&end=0`}
+                    className="w-full h-full"
+                    title={project.title}
+                    allow="autoplay; encrypted-media"
+                    style={{ pointerEvents: 'none' }}
+                  />
+                </div>
+                
+                <div className="max-w-md mx-auto">
+                  <p className="text-sm leading-relaxed text-muted-foreground text-center">
+                    {project.description}
+                  </p>
+                </div>
               </div>
             </div>
           ))}

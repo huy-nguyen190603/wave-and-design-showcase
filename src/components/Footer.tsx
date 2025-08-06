@@ -7,15 +7,15 @@ const Footer = () => {
   };
 
   return (
-    <footer className="py-16 px-6">
+    <footer className="py-8 px-6">
       <div className="max-w-6xl mx-auto text-center">
         <Button 
           variant="ghost" 
           onClick={scrollToTop}
-          className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground"
+          className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground text-base px-6 py-3"
         >
           Back to top
-          <ArrowUp className="w-4 h-4" />
+          <ArrowUp className="w-5 h-5" />
         </Button>
       </div>
     </footer>

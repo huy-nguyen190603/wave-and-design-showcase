@@ -11,7 +11,7 @@ const HeroSection = () => {
     });
   };
   return <section className="min-h-screen flex items-center justify-center py-12 px-[40px]">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8 items-center lg:justify-items-center">
         {/* Left Content */}
         <div className="space-y-8 mx-0 px-0 lg:col-span-2">
           <div className="space-y-6">
