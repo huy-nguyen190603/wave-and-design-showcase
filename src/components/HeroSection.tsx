@@ -13,7 +13,7 @@ const HeroSection = () => {
 
   return (
     <section className="min-h-screen flex items-center justify-center px-6 py-12">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         {/* Left Content */}
         <div className="space-y-8">
           <div className="space-y-6">
@@ -27,7 +27,7 @@ const HeroSection = () => {
           </div>
           
           <div className="flex justify-start">
-            <Button className="bg-primary text-primary-foreground rounded-2xl px-8 py-3 text-sm font-medium hover:opacity-90 transition-opacity" onClick={copyEmail}>
+            <Button className="bg-primary text-primary-foreground rounded-full px-8 py-3 text-sm font-medium hover:opacity-90 transition-opacity" onClick={copyEmail}>
               Write me an email
             </Button>
           </div>
@@ -35,12 +35,12 @@ const HeroSection = () => {
         
         {/* Right Content - Profile Image */}
         <div className="relative flex justify-center lg:justify-end">
-          <div className="w-64 h-64 relative">
+          <div className="w-80 h-80 relative">
             <div className="w-full h-full rounded-full overflow-hidden bg-white shadow-lg">
               <img 
                 src="/lovable-uploads/94be2d95-59df-49ff-9aef-0e7ab1b5887e.png" 
                 alt="Bao Huy Nguyen - UX Designer" 
-                className="w-full h-full object-contain p-6"
+                className="w-full h-full object-contain p-8"
               />
             </div>
           </div>
