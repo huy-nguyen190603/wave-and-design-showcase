@@ -83,7 +83,7 @@ const WorkSection = () => {
   return <section className="py-12 px-6 border-t border-border/10">
       <div className="max-w-7xl mx-auto">
         <div className="mb-16">
-          <h2 className="text-3xl md:text-4xl font-medium tracking-tight mb-6 text-left">Selected UX Projects</h2>
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6 text-center">Selected UX Projects</h2>
         </div>
         
         <div className="space-y-8">
@@ -143,28 +143,28 @@ const WorkSection = () => {
                     <div className="space-y-6">
                       <div className="space-y-2">
                         <div className="flex gap-2">
-                          <span className="text-sm font-bold text-muted-foreground">Type of Project:</span>
+                          <span className="text-sm font-bold text-foreground">Type of Project:</span>
                           <span className="text-sm">{project.type}</span>
                         </div>
                         
                         <div className="flex gap-2">
-                          <span className="text-sm font-bold text-muted-foreground">Time:</span>
+                          <span className="text-sm font-bold text-foreground">Time:</span>
                           <span className="text-sm">{project.duration}</span>
                         </div>
                         
                         <div className="flex gap-2">
-                          <span className="text-sm font-bold text-muted-foreground">Role:</span>
+                          <span className="text-sm font-bold text-foreground">Role:</span>
                           <span className="text-sm">{project.role}</span>
                         </div>
                       </div>
                       
-                      <div>
-                        <p className="text-sm font-bold text-muted-foreground mb-3">Description</p>
-                        <p className="text-sm leading-relaxed">{project.description}</p>
-                      </div>
+                        <div>
+                          <p className="text-sm font-bold text-foreground mb-3">Description</p>
+                          <p className="text-sm leading-relaxed">{project.description}</p>
+                        </div>
                       
                         <div>
-                          <p className="text-sm font-bold text-muted-foreground mb-3">Skills</p>
+                          <p className="text-sm font-bold text-foreground mb-3">Skills</p>
                           <div className="space-y-2">
                             {project.skills.map((skill, index) => {
                           const skillKey = `${project.id}-${skill}`;

@@ -25,7 +25,7 @@ const BeyondWorkSection = () => {
     <section className="py-12 px-6">
       <div className="max-w-6xl mx-auto">
         <div className="mb-16">
-          <h2 className="text-2xl md:text-3xl font-medium tracking-tight mb-6 text-left">Beyond these projects, I also ...</h2>
+          <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-6 text-center">Beyond these projects, I also ...</h2>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 bg-white rounded-2xl p-8 border border-border/10 shadow-sm">
@@ -43,7 +43,7 @@ const BeyondWorkSection = () => {
               </div>
               
               {/* Content */}
-              <div className="space-y-3">
+              <div className="space-y-3 text-center">
                 <h3 className="text-xl font-medium">{project.title}</h3>
                 <p className="text-sm leading-relaxed text-muted-foreground">
                   {project.description}
