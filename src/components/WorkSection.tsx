@@ -80,9 +80,9 @@ const WorkSection = () => {
     link: "#",
     canvaLink: "https://www.canva.com/design/DAGths7jopE/BmKMiqVTFU8B63FBnuTlxg/edit?utm_content=DAGths7jopE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
   }];
-  return <section className="py-12 px-6 border-t border-border/10">
+  return <section className="py-8 px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="mb-16">
+        <div className="mb-12">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6 text-center">Selected UX Projects</h2>
         </div>
         
@@ -178,13 +178,13 @@ const WorkSection = () => {
                         </div>
                       
                         {/* CTA Buttons */}
-                        {project.id === 2 ? <div className="pt-4">
-                            <Button onClick={() => window.open('https://www.figma.com/proto/e71vytYcbY7rb760X9rvhU/Snapcare--Official-?page-id=0%3A1&node-id=439-5329&p=f&viewport=-1404%2C1316%2C0.26&t=Dt0YvonDz9FqjRZk-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=437%3A4608&show-proto-sidebar=1', '_blank')} className="text-sm w-full flex items-center justify-start gap-2 hover:opacity-90 transition-opacity py-3 px-8 rounded-full bg-primary text-primary-foreground">
-                              <img src="/lovable-uploads/5116d23a-ff42-4904-8e73-c0631215e58a.png" alt="Figma logo" className="w-4 h-4 object-contain" />
+                        {project.id === 2 ? <div className="pt-4 flex justify-end">
+                            <Button onClick={() => window.open('https://www.figma.com/proto/e71vytYcbY7rb760X9rvhU/Snapcare--Official-?page-id=0%3A1&node-id=439-5329&p=f&viewport=-1404%2C1316%2C0.26&t=Dt0YvonDz9FqjRZk-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=437%3A4608&show-proto-sidebar=1', '_blank')} className="text-xs flex items-center gap-2 hover:opacity-90 transition-opacity py-2 px-4 rounded-full bg-primary text-primary-foreground">
+                              <img src="/lovable-uploads/5116d23a-ff42-4904-8e73-c0631215e58a.png" alt="Figma logo" className="w-3 h-3 object-contain" />
                               Open Prototype in Figma
                             </Button>
-                          </div> : <div className="pt-4">
-                            <Button className="text-sm w-full flex items-center justify-start gap-2 hover:opacity-90 transition-opacity py-3 px-8 rounded-full bg-primary text-primary-foreground" onClick={() => {
+                          </div> : <div className="pt-4 flex justify-end">
+                            <Button className="text-xs flex items-center gap-2 hover:opacity-90 transition-opacity py-2 px-4 rounded-full bg-primary text-primary-foreground" onClick={() => {
                         if (project.id === 1) {
                           window.open('https://impady.com/', '_blank');
                         } else {
@@ -193,10 +193,10 @@ const WorkSection = () => {
                         }
                       }}>
                               {project.id === 1 ? <>
-                                  <img src="/lovable-uploads/c2fae0fe-edf1-4926-9d19-dfae57c51058.png" alt="IMPADY logo" className="w-4 h-4 object-contain" />
+                                  <img src="/lovable-uploads/c2fae0fe-edf1-4926-9d19-dfae57c51058.png" alt="IMPADY logo" className="w-3 h-3 object-contain" />
                                   Open IMPADY.com
                                 </> : <>
-                                  <FileText className="w-4 h-4" />
+                                  <FileText className="w-3 h-3" />
                                   Open Research Paper
                                 </>}
                             </Button>
