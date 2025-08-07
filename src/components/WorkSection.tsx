@@ -80,7 +80,7 @@ const WorkSection = () => {
     link: "#",
     canvaLink: "https://www.canva.com/design/DAGths7jopE/BmKMiqVTFU8B63FBnuTlxg/edit?utm_content=DAGths7jopE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
   }];
-  return <section className="py-8 px-6">
+  return <section className="py-16 px-6">
       <div className="max-w-7xl mx-auto">
         <div className="mb-12">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6 text-center">Selected UX Projects</h2>
