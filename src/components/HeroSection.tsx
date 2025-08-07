@@ -17,16 +17,12 @@ const HeroSection = () => {
         {/* Left Content */}
         <div className="space-y-8 text-center lg:text-left">
           <div className="space-y-6">
-            <h1 className="text-5xl lg:text-6xl font-medium tracking-tight leading-tight">
-              Portfolio
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight leading-tight">
+              Crafting digital experiences grounded in human behavior
             </h1>
             
-            <h2 className="text-2xl lg:text-3xl font-medium">
-              Hello, I'm Bao Huy Nguyen.
-            </h2>
-            
-            <p className="text-lg text-muted-foreground leading-relaxed max-w-lg mx-auto lg:mx-0">
-              I'm a <strong>UX Designer</strong> with a degree in Business Psychology, helping create intuitive digital experiences grounded in human behavior and research.
+            <p className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto lg:mx-0">
+              I'm a UX Designer with a degree in Business Psychology—a blend that helps me understand not just what users do, but <em>why</em>. I enjoy using research, and design to create intuitive solutions that feel natural to use.
             </p>
           </div>
           
