@@ -10,7 +10,7 @@ const HeroSection = () => {
       description: "Email address copied to clipboard!"
     });
   };
-  return <section className="h-[60vh] flex items-center justify-center py-16 px-[40px]">
+  return <section className="h-[60vh] flex items-center justify-center px-[40px] py-[100px]">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8 items-center lg:justify-items-center">
         {/* Left Content */}
         <div className="space-y-8 mx-0 px-0 lg:col-span-2 pl-4">
