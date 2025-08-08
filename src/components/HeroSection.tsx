@@ -12,7 +12,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="h-[70vh] flex items-start px-8 py-20">
+    <section className="h-[70vh] flex items-start px-8 py-10">
       <div className="max-w-5xl mx-auto">
         {/* Left-aligned Content */}
         <div className="space-y-10">
