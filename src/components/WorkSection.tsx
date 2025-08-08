@@ -107,7 +107,7 @@ const WorkSection = () => {
                         </div>
                       
                           {/* Featured In - Only for SNAPCARE */}
-                        {project.id === 2 && <div className="mt-6">
+                        {project.id === 2 && <div className="mt-6 my-[34px]">
                             <div className="flex items-center gap-1 mb-3">
                               <span className="text-xs text-primary">✨</span>
                               <span className="text-xs font-bold">Featured In:</span>
@@ -201,8 +201,7 @@ const WorkSection = () => {
                 </div>
                 
                 {/* SNAPCARE Button at Bottom */}
-                {project.id === 2 && (
-                  <div className="px-8 pb-8">
+                {project.id === 2 && <div className="px-8 pb-8">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                       <div></div> {/* Empty div to align with second column */}
                       <div className="flex justify-end">
@@ -212,8 +211,7 @@ const WorkSection = () => {
                         </Button>
                       </div>
                     </div>
-                  </div>
-                )}
+                  </div>}
               </CardContent>
             </Card>
             </div>)}
