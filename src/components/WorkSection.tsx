@@ -83,7 +83,7 @@ const WorkSection = () => {
   return <section className="px-6 py-[60px]">
       <div className="max-w-7xl mx-auto">
         <div className="mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6 text-center">Selected UX Projects</h2>
+          <h2 className="text-2xl md:text-3xl font-inter font-bold tracking-tight mb-6 text-center">Selected UX Projects</h2>
         </div>
         
         <div className="space-y-8">
