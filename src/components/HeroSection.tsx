@@ -38,14 +38,12 @@ const HeroSection = () => {
         
         {/* Right Content - Profile Image - Takes 1/3 */}
         <div className="flex justify-center lg:justify-center">
-          <div className="w-60 h-60 relative">
-            <div className="w-full h-full rounded-full overflow-hidden bg-white shadow-lg flex items-center justify-center">
-              <img 
-                src="/lovable-uploads/94be2d95-59df-49ff-9aef-0e7ab1b5887e.png" 
-                alt="Bao Huy Nguyen - UX Designer" 
-                className="w-[70%] h-[70%] object-contain" 
-              />
-            </div>
+          <div className="w-72 h-72 relative">
+            <img 
+              src="/lovable-uploads/94be2d95-59df-49ff-9aef-0e7ab1b5887e.png" 
+              alt="Bao Huy Nguyen - UX Designer" 
+              className="w-full h-full object-contain" 
+            />
           </div>
         </div>
       </div>
