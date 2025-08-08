@@ -20,10 +20,6 @@ const HeroSection = () => {
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-inter font-bold tracking-tight leading-[1.1] text-left">
               Crafting digital experiences <span className="text-muted-foreground">grounded in human behavior</span>
             </h1>
-            
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-3xl font-inter font-normal">
-              I'm a UX Designer with a degree in Business Psychology—a blend that helps me understand not just what users do, but <em>why</em>. I enjoy using research, and design to create intuitive solutions that feel natural to use.
-            </p>
           </div>
           
           <div className="flex">
