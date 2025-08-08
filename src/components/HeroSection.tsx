@@ -18,7 +18,7 @@ const HeroSection = () => {
         <div className="space-y-10">
           <div className="space-y-8">
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-inter font-bold tracking-tight leading-[1.1] text-left">
-              Crafting digital experiences <span className="text-secondary">grounded in human behavior</span>
+              Crafting digital experiences <span className="text-muted-foreground">grounded in human behavior</span>
             </h1>
             
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-3xl font-inter font-normal">
