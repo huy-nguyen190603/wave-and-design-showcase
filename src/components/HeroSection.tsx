@@ -13,9 +13,9 @@ const HeroSection = () => {
 
   return (
     <section className="min-h-screen flex items-center justify-center px-8 py-20">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-        {/* Left Content */}
-        <div className="space-y-8 text-center lg:text-left">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-4 items-center">
+        {/* Left Content - Takes 2/3 */}
+        <div className="lg:col-span-2 space-y-8 text-center lg:text-left">
           <div className="space-y-6">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight leading-tight">
               Crafting digital experiences grounded in human behavior
@@ -36,9 +36,9 @@ const HeroSection = () => {
           </div>
         </div>
         
-        {/* Right Content - Profile Image */}
-        <div className="flex justify-center lg:justify-end">
-          <div className="w-80 h-80 relative">
+        {/* Right Content - Profile Image - Takes 1/3 */}
+        <div className="flex justify-center lg:justify-center">
+          <div className="w-60 h-60 relative">
             <div className="w-full h-full rounded-full overflow-hidden bg-white shadow-lg flex items-center justify-center">
               <img 
                 src="/lovable-uploads/94be2d95-59df-49ff-9aef-0e7ab1b5887e.png" 

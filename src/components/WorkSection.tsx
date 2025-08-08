@@ -177,13 +177,8 @@ const WorkSection = () => {
                           </div>
                         </div>
                       
-                        {/* CTA Buttons */}
-                        {project.id === 2 ? <div className="pt-4 flex justify-end">
-                            <Button onClick={() => window.open('https://www.figma.com/proto/e71vytYcbY7rb760X9rvhU/Snapcare--Official-?page-id=0%3A1&node-id=439-5329&p=f&viewport=-1404%2C1316%2C0.26&t=Dt0YvonDz9FqjRZk-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=437%3A4608&show-proto-sidebar=1', '_blank')} className="text-xs flex items-center gap-2 hover:opacity-90 transition-opacity py-2 px-4 rounded-full bg-primary text-primary-foreground">
-                              <img src="/lovable-uploads/5116d23a-ff42-4904-8e73-c0631215e58a.png" alt="Figma logo" className="w-3 h-3 object-contain" />
-                              Open Prototype in Figma
-                            </Button>
-                          </div> : <div className="pt-4 flex justify-end">
+                        {/* CTA Buttons - Non-SNAPCARE only */}
+                        {project.id !== 2 && <div className="pt-4 flex justify-end">
                             <Button className="text-xs flex items-center gap-2 hover:opacity-90 transition-opacity py-2 px-4 rounded-full bg-primary text-primary-foreground" onClick={() => {
                         if (project.id === 1) {
                           window.open('https://impady.com/', '_blank');
@@ -204,6 +199,18 @@ const WorkSection = () => {
                     </div>
                   </div>
                 </div>
+                
+                {/* SNAPCARE Button at Bottom */}
+                {project.id === 2 && (
+                  <div className="px-8 pb-8">
+                    <div className="flex justify-end">
+                      <Button onClick={() => window.open('https://www.figma.com/proto/e71vytYcbY7rb760X9rvhU/Snapcare--Official-?page-id=0%3A1&node-id=439-5329&p=f&viewport=-1404%2C1316%2C0.26&t=Dt0YvonDz9FqjRZk-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=437%3A4608&show-proto-sidebar=1', '_blank')} className="text-xs flex items-center gap-2 hover:opacity-90 transition-opacity py-2 px-4 rounded-full bg-primary text-primary-foreground">
+                        <img src="/lovable-uploads/5116d23a-ff42-4904-8e73-c0631215e58a.png" alt="Figma logo" className="w-3 h-3 object-contain" />
+                        Open Prototype in Figma
+                      </Button>
+                    </div>
+                  </div>
+                )}
               </CardContent>
             </Card>
             </div>)}
