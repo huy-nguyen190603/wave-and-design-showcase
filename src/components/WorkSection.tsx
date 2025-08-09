@@ -108,7 +108,7 @@ const WorkSection = () => {
                       
                           {/* Featured In - Only for SNAPCARE */}
                         {project.id === 2 && <div className="mt-6 my-[34px]">
-                            <div className="flex items-center gap-1 mb-3">
+                            <div className="flex items-center gap-1 mb-3 mt-4">
                               <span className="text-xs text-primary">✨</span>
                               <span className="text-xs font-bold">Featured In:</span>
                             </div>
