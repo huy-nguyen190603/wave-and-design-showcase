@@ -15,7 +15,7 @@ const HeroSection = () => {
     <section className="h-[70vh] flex items-start px-8 py-10">
       <div className="max-w-5xl mx-auto">
         {/* Left-aligned Content */}
-        <div className="space-y-10 mt-8">
+        <div className="space-y-10 mt-10">
           <div className="space-y-8 mt-8">
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-inter font-bold tracking-tight leading-[1.1] text-left pb-4">
               Crafting digital experiences <span className="text-muted-foreground">grounded in human behavior</span>
