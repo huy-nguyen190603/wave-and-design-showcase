@@ -24,7 +24,7 @@ const BeyondWorkSection = () => {
   return (
     <section className="py-12 px-6">
       <div className="max-w-6xl mx-auto">
-        <div className="mb-16">
+        <div className="mb-6">
           <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-6 text-center">Beyond these projects, I also ...</h2>
         </div>
         
