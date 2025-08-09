@@ -2,6 +2,7 @@ import HeroSection from "@/components/HeroSection";
 import WorkSection from "@/components/WorkSection";
 import BeyondWorkSection from "@/components/BeyondWorkSection";
 import Footer from "@/components/Footer";
+import CookieConsent from "@/components/CookieConsent";
 
 const Index = () => {
   return (
@@ -10,6 +11,7 @@ const Index = () => {
       <WorkSection />
       <BeyondWorkSection />
       <Footer />
+      <CookieConsent />
     </div>
   );
 };
