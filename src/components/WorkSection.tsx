@@ -110,7 +110,7 @@ const WorkSection = () => {
                         {project.id === 2 && <div className="mt-6 my-[34px]">
                             <div className="flex items-center gap-1 mb-3 mt-8">
                               <span className="text-xs text-primary">✨</span>
-                              <span className="text-xs font-bold">Featured In:</span>
+                              <span className="text-xs font-bold mt-2">Featured In:</span>
                             </div>
                             
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
