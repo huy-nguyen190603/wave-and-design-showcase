@@ -113,8 +113,8 @@ const WorkSection = () => {
                               <span className="text-xs font-bold">Featured In:</span>
                             </div>
                             
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mt-8">
-                              <a href="https://impact.h-da.de/en/incubation-program" target="_blank" rel="noopener noreferrer" className="border rounded-lg p-3 hover:opacity-90 transition-opacity">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mt-4">
+                              <a href="https://impact.h-da.de/en/incubation-program" target="_blank" rel="noopener noreferrer" className="border rounded-lg p-3 hover:opacity-90 transition-opacity -mb-2">
                                 <h4 className="text-xs font-medium mb-1">European fireworks of ideas</h4>
                                 <p className="text-xs text-muted-foreground mb-2">
                                   Shared vision, combined forces, concentrated innovations: More than 100 participants experienced an...
@@ -125,7 +125,7 @@ const WorkSection = () => {
                                 </div>
                               </a>
                               
-                              <a href="https://www.fr.de/rhein-main/darmstadt/europaeische-uni-als-fernziel-der-hochschule-darmstadt-93773945.html#google_vignette" target="_blank" rel="noopener noreferrer" className="border rounded-lg p-3 hover:opacity-90 transition-opacity">
+                              <a href="https://www.fr.de/rhein-main/darmstadt/europaeische-uni-als-fernziel-der-hochschule-darmstadt-93773945.html#google_vignette" target="_blank" rel="noopener noreferrer" className="border rounded-lg p-3 hover:opacity-90 transition-opacity -mb-2">
                                 <h4 className="text-xs font-medium mb-1">Europäische Uni als Fernziel</h4>
                                 <p className="text-xs text-muted-foreground mb-2">
                                   Die Hochschule Darmstadt ist im Verbund mit acht ausländischen Hochschulen...
