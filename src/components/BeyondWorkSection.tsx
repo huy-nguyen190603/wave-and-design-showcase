@@ -5,7 +5,7 @@ const BeyondWorkSection = () => {
     {
       id: 1,
       title: "organize events",
-      description: "Planning events has taught me how to stay calm in chaos, adapt quickly, and always think about the person on the other end. It's UX—just without the Figma file.",
+      description: "Planning events has taught me how to stay calm in chaos, adapt quickly, and always think about the person on the other end.",
       videoUrl: "https://youtu.be/qKqNrn1Btto"
     },
     {
