@@ -204,12 +204,12 @@ const WorkSection = () => {
                 {project.id === 2 && <div className="px-8 pb-8">
                     {/*<div className="grid grid-cols-1 md:grid-cols-2 gap-3">*/}
                       {/* Empty div to align with second column */}
-                      <div className="flex justify-end">
+                      {/*<div className="flex justify-end">*/}
                         <Button onClick={() => window.open('https://www.figma.com/proto/e71vytYcbY7rb760X9rvhU/Snapcare--Official-?page-id=0%3A1&node-id=439-5329&p=f&viewport=-1404%2C1316%2C0.26&t=Dt0YvonDz9FqjRZk-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=437%3A4608&show-proto-sidebar=1', '_blank')} className="text-xs flex items-center gap-2 hover:opacity-90 transition-opacity py-2 px-4 rounded-full bg-primary text-primary-foreground">
                           <img src="/lovable-uploads/5116d23a-ff42-4904-8e73-c0631215e58a.png" alt="Figma logo" className="w-3 h-3 object-contain" />
                           Open Prototype in Figma
                         </Button>
-                      </div>
+                      {/*</div>*/}
                     {/*</div>*/}
                   </div>}
               </CardContent>
