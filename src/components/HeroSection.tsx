@@ -18,7 +18,7 @@ const HeroSection = () => {
         {/* Left-aligned Content */}
         <div className="space-y-6 sm:space-y-8 lg:space-y-10 mt-6 sm:mt-8 lg:mt-10">
           <div className="space-y-6 sm:space-y-8">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-inter font-bold tracking-tight leading-[1.1] text-left pb-2 sm:pb-4">
+            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-inter font-bold tracking-tight leading-[1.1] text-left pb-2 sm:pb-4">
               Crafting digital experiences <br /> <span className="text-muted-foreground animate-pulse">grounded in human behaviors</span>
             </h1>
           </div>
