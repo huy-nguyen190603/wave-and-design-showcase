@@ -13,7 +13,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="min-h-[70vh] flex items-start px-10 sm:px-12 lg:px-18 py-6 sm:py-8 lg:py-10">
+    <section className="min-h-[70vh] flex items-start px-10 sm:px-12 lg:px-20 py-6 sm:py-8 lg:py-10">
       <div className="max-w-7xl mx-auto w-full">
         {/* Left-aligned Content */}
         <div className="space-y-6 sm:space-y-8 lg:space-y-10 mt-6 sm:mt-8 lg:mt-10">
