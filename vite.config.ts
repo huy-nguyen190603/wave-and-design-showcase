@@ -22,12 +22,11 @@ export default defineConfig(({ mode }) => ({
     },
   },
   build: {
-    target: 'es2015',
-    outDir: 'dist',
-    assetsDir: 'assets',
+    target: 'es2015', // Ensures compatibility with GitHub Pages
     rollupOptions: {
       output: {
         manualChunks: undefined,
+        format: 'iife', // Use IIFE instead of ES modules to avoid MIME type issues
       }
     }
   },
