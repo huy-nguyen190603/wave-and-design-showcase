@@ -3,7 +3,6 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://huy-nguyen190603.github.io/wave-and-design-showcase/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
