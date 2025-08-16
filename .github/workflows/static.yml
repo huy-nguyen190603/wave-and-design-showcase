@@ -44,8 +44,11 @@ jobs:
       - name: Build
         run: npm run build
       
-      - name: Copy CNAME
-        run: cp CNAME dist/CNAME
+      - name: Copy CNAME to dist (if exists)
+        run: |
+          if [ -f CNAME ]; then
+            cp CNAME dist/CNAME
+          fi
       
       - name: Setup Pages
         uses: actions/configure-pages@v5
